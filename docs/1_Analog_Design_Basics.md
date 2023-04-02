@@ -22,6 +22,7 @@ First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d
 # Video Courses
 &ensp; **1- Dr. Hesham Omran** [Arabic] ([Video Lecs](https://www.master-micro.com/professional-courses/analog-ic-design)) ([Slides](https://drive.google.com/drive/folders/1OWcbg8f48_ilr8jptdFEA3nbNeQyD0Hi))</br>
 &ensp; **2- Dr. Tony Carusone** ([Video Lecs](https://www.youtube.com/playlist?list=PLUJOuapA83-QlWbnMJvoyQucGaBlpBF0F))</br>
+&ensp; **3- Dr. Hiu Yung (Hugh) Wong** ([Video Lecs](https://www.youtube.com/playlist?list=PLnK6MrIqGXsLL_IYksrx2ErnCucYRqXjF)) ([Post](https://www.linkedin.com/feed/update/urn:li:activity:7047438085277569024/))</br>
 </br>
 &ensp; For more in-depth lectures, You could watch the much longer lectures of Prof. Razavi & Prof. Hajimiri: </br>
 &ensp; **1- Dr. Behzad Razavi** ([Video Lecs](https://youtube.com/playlist?list=PLyYrySVqmyVPzvVlPW-TTzHhNWg1J_0LU))</br>
