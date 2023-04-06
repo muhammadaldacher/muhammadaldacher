@@ -20,14 +20,17 @@ First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d
 ![razavi_suggestion](https://user-images.githubusercontent.com/27668656/226144998-17048cb5-fe2c-41a3-a1f3-320efbb43f04.png)
 
 # Video Courses
-&ensp; **1- Dr. Hesham Omran** [Arabic] ([Video Lecs](https://www.master-micro.com/professional-courses/analog-ic-design)) ([Slides](https://drive.google.com/drive/folders/1OWcbg8f48_ilr8jptdFEA3nbNeQyD0Hi))</br>
-&ensp; **2- Dr. Tony Carusone** ([Video Lecs](https://www.youtube.com/playlist?list=PLUJOuapA83-QlWbnMJvoyQucGaBlpBF0F))</br>
-&ensp; **3- Dr. Hiu Yung (Hugh) Wong** ([Video Lecs](https://www.youtube.com/playlist?list=PLnK6MrIqGXsLL_IYksrx2ErnCucYRqXjF)) ([Post](https://www.linkedin.com/feed/update/urn:li:activity:7047438085277569024/))</br>
-</br>
-&ensp; For more in-depth lectures, You could watch the much longer lectures of Prof. Razavi & Prof. Hajimiri: </br>
-&ensp; **1- Dr. Behzad Razavi** ([Video Lecs](https://youtube.com/playlist?list=PLyYrySVqmyVPzvVlPW-TTzHhNWg1J_0LU))</br>
-&ensp; **2- Dr. Ali Hajimiri** ([Video Lecs](https://youtube.com/playlist?list=PLc7Gz02Znph-c2-ssFpRrzYwbzplXfXUT))</br>
-	
+| | Topic | Instructor | Affiliation | Material |
+|---:|---|---|---|---|
+| |**Analog ICs Basics**|  |  |  |
+| | |(A) Dr. Hesham Omran        | Ain Shams Univ  |([Video Lecs](https://www.master-micro.com/professional-courses/analog-ic-design))[Arabic] ([Slides](https://drive.google.com/drive/folders/1OWcbg8f48_ilr8jptdFEA3nbNeQyD0Hi))|
+| | |(B) Dr. Tony Carusone       | Univ of Toronto | ([Video Lecs](https://www.youtube.com/playlist?list=PLUJOuapA83-QlWbnMJvoyQucGaBlpBF0F))|
+| | |(C) Dr. Hiu Yung Wong       | SJSU            | ([Video Lecs](https://www.youtube.com/playlist?list=PLnK6MrIqGXsLL_IYksrx2ErnCucYRqXjF)) ([Post](https://www.linkedin.com/feed/update/urn:li:activity:7047438085277569024/))|
+| |(More in-depth Lecs)|  |  |  |
+| | |(A) Dr. Behzad Razavi       | UCLA            |([Video Lecs](https://youtube.com/playlist?list=PLyYrySVqmyVPzvVlPW-TTzHhNWg1J_0LU))|
+| | |(B) Dr. Ali Hajimiri        | Caltech         |([Video Lecs](https://youtube.com/playlist?list=PLc7Gz02Znph-c2-ssFpRrzYwbzplXfXUT))|
+
+
 # References & Related Slides
 &ensp; **1- "Microelectronic Circuits"** by Sedra & Smith ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJNm9KcEt1X1ZibjQ?resourcekey=0-b4S6wGCVicRM07cDVEP-hw&usp=share_link))</br>
 &ensp; **2- "Fundamentals of Microelectronics"** by Razavi ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJb3FCZFY3Y0I1U0E?resourcekey=0-Moxu6Zv_P8ndIVCjvre0EQ&usp=share_link))</br>
