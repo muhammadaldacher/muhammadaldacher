@@ -1,4 +1,4 @@
-First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJTDRzTC1qZjFtSm8/view?usp=sharing&resourcekey=0-LBO4LOGI8kuvC2Yxie0LOA)" by Prof. Phillip Allen.
+> First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJTDRzTC1qZjFtSm8/view?usp=sharing&resourcekey=0-LBO4LOGI8kuvC2Yxie0LOA)" by Prof. Phillip Allen.
 # Steps to Master the Analog-Design Basics
 &ensp; 1- Complete one of the online courses (Choose one that you are comfortable studying from).</br>
 &ensp; 2- Derive the main equations by hand at least once.</br>
@@ -16,7 +16,7 @@ First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d
 &ensp; 7- OpAmp Circuits </br>
 &ensp; 8- Feedback Systems & Compensation </br>
 </br>
-&ensp; Prof. Behzad Razavi also has some suggested timelines for studying the basics in his reference "[Fundamentals of Microelectronics](https://drive.google.com/file/d/0B-sYTk-Q69hJM1J0bnJnSHFnV0E/view?usp=share_link&resourcekey=0-c0S7IscnRczcy0-cScpw2A)", below is one of them:</br>
+> Prof. Behzad Razavi also has some suggested timelines for studying the basics in his reference "[Fundamentals of Microelectronics](https://drive.google.com/file/d/0B-sYTk-Q69hJM1J0bnJnSHFnV0E/view?usp=share_link&resourcekey=0-c0S7IscnRczcy0-cScpw2A)", </br> below is one of them:</br>
 ![razavi_suggestion](https://user-images.githubusercontent.com/27668656/226144998-17048cb5-fe2c-41a3-a1f3-320efbb43f04.png)
 
 # Video Courses
@@ -29,7 +29,8 @@ First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d
 | |(More in-depth Lecs)|  |  |  |
 | | |(A) Dr. Behzad Razavi       | UCLA            |([Video Lecs](https://youtube.com/playlist?list=PLyYrySVqmyVPzvVlPW-TTzHhNWg1J_0LU))|
 | | |(B) Dr. Ali Hajimiri        | Caltech         |([Video Lecs](https://youtube.com/playlist?list=PLc7Gz02Znph-c2-ssFpRrzYwbzplXfXUT))|
-
+> I would suggest studying Analog Design from one of the first 3 courses. </br>
+  Then, Watch the much longer lectures of Prof. Razavi & Prof. Hajimiri later for more in-depth understanding.
 
 # References & Related Slides
 &ensp; **1- "Microelectronic Circuits"** by Sedra & Smith ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJNm9KcEt1X1ZibjQ?resourcekey=0-b4S6wGCVicRM07cDVEP-hw&usp=share_link))</br>
