@@ -22,6 +22,7 @@
 # Video Courses
 | | Topic | Instructor | Affiliation | Material |
 |---:|---|---|---|---|
+|    |   |   |   |   |
 | |**Analog ICs Basics**|  |  |  |
 | | |(A) Dr. Hesham Omran        | Ain Shams Univ  |([Video Lecs](https://www.master-micro.com/professional-courses/analog-ic-design))[Arabic] ([Slides](https://drive.google.com/drive/folders/1OWcbg8f48_ilr8jptdFEA3nbNeQyD0Hi))|
 | | |(B) Dr. Tony Carusone       | Univ of Toronto | ([Video Lecs](https://www.youtube.com/playlist?list=PLUJOuapA83-QlWbnMJvoyQucGaBlpBF0F))|
@@ -33,12 +34,14 @@
   Then, Watch the much longer lectures of Prof. Razavi & Prof. Hajimiri later for more in-depth understanding.
 
 # References & Related Slides
-&ensp; **1- "Microelectronic Circuits"** by Sedra & Smith ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJNm9KcEt1X1ZibjQ?resourcekey=0-b4S6wGCVicRM07cDVEP-hw&usp=share_link))</br>
-&ensp; **2- "Fundamentals of Microelectronics"** by Razavi ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJb3FCZFY3Y0I1U0E?resourcekey=0-Moxu6Zv_P8ndIVCjvre0EQ&usp=share_link))</br>
+|||||
+|---:|---|---|---|
+| 1|"Microelectronic Circuits"         |by Sedra & Smith   | ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJNm9KcEt1X1ZibjQ?resourcekey=0-b4S6wGCVicRM07cDVEP-hw&usp=share_link))|
+| 2|"Fundamentals of Microelectronics" |by Razavi          | ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJb3FCZFY3Y0I1U0E?resourcekey=0-Moxu6Zv_P8ndIVCjvre0EQ&usp=share_link))|
 	
 # Labs & Project
-&ensp; **1- Labs** &emsp; ([Labs 1: MasterMicro](https://drive.google.com/drive/folders/1bVQrHuBM_Zyx9GM0jdYwGqFmFIBjb9Fk)) ([Labs 2: SJSU](https://drive.google.com/drive/folders/1A4ULiHTrCDisAsUjpNhbsXqIM3358t2o?usp=share_link)) </br>
-&emsp; &emsp; a) NMOS & PMOS characteristic curves</br>
-&emsp; &emsp; b) Single-Stage Amplifiers</br>
-&emsp; &emsp; c) Diff-Pair</br>
-&ensp; **2- OpAmp Project** &emsp; ([Videos: Design of two stage opamp in cadence](https://www.youtube.com/playlist?list=PLK2eyR1C9gjoBp61ZDvz6Zdd_6Hu7vZTz)) ([drive](https://drive.google.com/drive/folders/0B-sYTk-Q69hJRmdRSk8xTzNNRms?resourcekey=0-dZcX34CkRp2pDYntYtfhFQ&usp=share_link))</br>
+|||||
+|---:|---|---|---|
+| 1|Labs          |([Labs 1: MasterMicro](https://drive.google.com/drive/folders/1bVQrHuBM_Zyx9GM0jdYwGqFmFIBjb9Fk))                         |([Labs 2: SJSU](https://drive.google.com/drive/folders/1A4ULiHTrCDisAsUjpNhbsXqIM3358t2o?usp=share_link)) |
+| 2|OpAmp Project |([Videos: Design of two stage opamp in cadence](https://www.youtube.com/playlist?list=PLK2eyR1C9gjoBp61ZDvz6Zdd_6Hu7vZTz))| ([drive](https://drive.google.com/drive/folders/0B-sYTk-Q69hJRmdRSk8xTzNNRms?resourcekey=0-dZcX34CkRp2pDYntYtfhFQ&usp=share_link))|
+
