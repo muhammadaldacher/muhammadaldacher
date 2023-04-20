@@ -1,5 +1,5 @@
 > First, Check "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJTDRzTC1qZjFtSm8/view?usp=sharing&resourcekey=0-LBO4LOGI8kuvC2Yxie0LOA)" by Prof. Phillip Allen.
-# Steps to Master the Analog-Design Basics
+# Studying the Analog-Design Basics
 &ensp; 1- Complete one of the online courses (Choose one that you are comfortable studying from).</br>
 &ensp; 2- Derive the main equations by hand at least once.</br>
 &ensp; 3- Revise the important equations & concepts from the course slides (Or Create your own summary of important concepts).</br>
