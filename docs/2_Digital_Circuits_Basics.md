@@ -7,7 +7,19 @@ As an Analog & Mixed-Signal Designer, it is important to understand the **Digita
 &ensp; 5- [Project] Build some combinational & sequential logic on the transistor level, & simulate it on Cadence Virtuoso.</br>
 
 # Main Topics
-
+&ensp; (A) Digital Logic: </br>
+&ensp; &ensp; &ensp; 1- Boolean Algebra </br>
+&ensp; &ensp; &ensp; 2- Logic Gates </br>
+&ensp; &ensp; &ensp; 3- Combinational Circuits </br>
+&ensp; &ensp; &ensp; 4- Sequential Circuits </br>
+&ensp; &ensp; &ensp; 5- Finite-State Machines </br>
+&ensp; (B) Digital Circuits: </br>
+&ensp; &ensp; &ensp; 1- CMOS Inverter </br>
+&ensp; &ensp; &ensp; 2- Static Combinational Circuits </br>
+&ensp; &ensp; &ensp; 3- Dynamic Combinational Circuits </br>
+&ensp; &ensp; &ensp; 4- Sequential Circuits </br>
+&ensp; &ensp; &ensp; 5- Semiconductor Memories </br>
+</br>
 
 # Courses & Tutorials
 | | Topic | Instructor | Affiliation | Material |
