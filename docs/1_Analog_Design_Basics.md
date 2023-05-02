@@ -44,4 +44,5 @@
 |---:|---|---|---|
 | 1|Labs          |([Labs 1: MasterMicro](https://drive.google.com/drive/folders/1bVQrHuBM_Zyx9GM0jdYwGqFmFIBjb9Fk))                         |([Labs 2: SJSU](https://drive.google.com/drive/folders/1A4ULiHTrCDisAsUjpNhbsXqIM3358t2o?usp=share_link)) |
 | 2|OpAmp Project |([Videos: Design of two stage opamp in cadence](https://www.youtube.com/playlist?list=PLK2eyR1C9gjoBp61ZDvz6Zdd_6Hu7vZTz))| ([drive](https://drive.google.com/drive/folders/0B-sYTk-Q69hJRmdRSk8xTzNNRms?resourcekey=0-dZcX34CkRp2pDYntYtfhFQ&usp=share_link))|
+|  |OpAmp Verification |([Videos: Cadence OpAmp Verification](https://youtube.com/playlist?list=PLNc4_VomSgRGJtpa66HTBfYsnqr6opFd7))         | |
 
