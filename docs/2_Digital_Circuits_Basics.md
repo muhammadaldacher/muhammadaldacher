@@ -44,8 +44,9 @@ As an Analog & Mixed-Signal Designer, it is important to understand the **Digita
 |    |   |   |   |   |
 |---:|---|---|---|---|
 |Verilog HDL projects|||||
-||1|"100 Days of RTL"|([Repo](https://github.com/raulbehl/100DaysOfRTL)) ([Post](https://www.linkedin.com/posts/raulbehl_100daysofrtl-100daysofrtl-verilog-activity-6981260188943052800-jyJ9))||
-||2|"FPGA Design of Digital/Analog Clock Display"|([Repo](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7)) ([Labs](https://drive.google.com/drive/folders/1JvVr4amOXQE0dqAIHVlUzsUnugPQMXc1))||
+||1|"HDLBits — Verilog Practice"|([Link](https://hdlbits.01xz.net/wiki/Main_Page)) ||
+||2|"100 Days of RTL"|([Repo](https://github.com/raulbehl/100DaysOfRTL)) ([Post](https://www.linkedin.com/posts/raulbehl_100daysofrtl-100daysofrtl-verilog-activity-6981260188943052800-jyJ9))||
+||3|"FPGA Design of Digital/Analog Clock Display"|([Repo](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7)) ([Labs](https://drive.google.com/drive/folders/1JvVr4amOXQE0dqAIHVlUzsUnugPQMXc1))||
 |Digital Circuits & Layout|||||
 ||1|"8x8-SRAM-array"|([Repo](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array))||
 ||2|"8-bit Microprocessor"|([Repo](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor))||
