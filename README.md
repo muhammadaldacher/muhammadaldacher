@@ -51,9 +51,10 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 1. Cadence Tool
 2. Layout
 3. EM/IR
-4. Interview Qs
 -->
 ## Extras
+- Cadence Stuff ([drive](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link))
 - Razavi References ([drive](https://drive.google.com/drive/folders/1nh3xIubKoVVnNqBn1ol3yg5K-O-5yp5A?usp=share_link))</br>
 - Razavi AnalogMind Articles ([drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)) ([Linkedin Post](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d))</br>
-</br>
+- Interview Questions ([drive](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link))</br>
+- Resume-Building Docs ([drive](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link))</br>
