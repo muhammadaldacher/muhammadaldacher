@@ -1,6 +1,5 @@
 # Salam, I'm Muhammad Aldacher 👋
 📫 How to reach me: [Linkedin](https://www.linkedin.com/in/muhammad-isa-aldacher-95336831/)</br>
-This page is still under-construction 😄
 <!--
 **muhammadaldacher/muhammadaldacher** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -19,11 +18,11 @@ Here are some ideas to get you started:
 Here, I will try to organize a study roadmap for people interested in Analog & Mixed-Signal design, based on my experience & what I studied from before:
 1. [Analog Design Basics](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/1_Analog_Design_Basics.md)
 2. [Digital Circuits Basics](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/2_Digital_Circuits_Basics.md)
-3. [PLLs (Phase-Locked Loops)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/3_PLLs.md)
-4. [ADCs (Analog/Digital Converters)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/4_ADCs.md)
+3. [PLLs (Phase-Locked Loops)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/3_PLLs.md)⚡(work-in-progress)
+4. [ADCs (Analog/Digital Converters)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/4_ADCs.md)⚡(work-in-progress)
 5. [LDOs (Low-Dropout Regulators)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/5_LDOs.md)
-6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)
-7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)
+6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)⚡(work-in-progress)
+7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)⚡(work-in-progress)
 ---
 ## Projects
 | | Project | Category | Year |
