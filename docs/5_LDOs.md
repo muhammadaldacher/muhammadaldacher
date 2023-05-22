@@ -15,7 +15,8 @@
 |Noise Analysis||||
 | | (1) "LDO noise examined in detail"              |Texas Instruments|([Doc](https://www.ti.com/lit/an/slyt489/slyt489.pdf?ts=1684193235984))|
 | | (2) "LDO Noise Demystified"                     |Texas Instruments|([Doc](https://www.ti.com/lit/an/slaa412b/slaa412b.pdf?ts=1684193366800))|
-| | (3) Good paper on LDO noise                     |IEEE Xplore|([Doc](https://www.researchgate.net/publication/224625303_A_low_noise_high_power_supply_rejection_low_dropout_regulator_for_wireless_system-on-chip_applications))|
+| | (3) "Understanding noise in LDOs"               |Texas Instruments|([Doc](https://www.ti.com/lit/an/slyt201/slyt201.pdf))|
+| | (4) Good paper on LDO noise                     |IEEE Xplore|([Doc](https://www.researchgate.net/publication/224625303_A_low_noise_high_power_supply_rejection_low_dropout_regulator_for_wireless_system-on-chip_applications))|
 
 # Project
 |||||
