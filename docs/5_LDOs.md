@@ -12,6 +12,8 @@
 | | (1) "The Design of An LDO Regulator"              |Analog Mind - Razavi|([Doc](http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine5.pdf))|
 | | (2) "Understanding Low Drop Out (LDO) Regulators"    |Texas Instruments|([Doc](https://www.ti.com/lit/ml/slup239a/slup239a.pdf?ts=1684035858827))|
 | | (3) "Technical Review Of LDO Operation & Performance"|Texas Instruments|([Doc](https://www.ti.com/lit/an/slva072/slva072.pdf?ts=1683431033619))|
+|Freq Response||||
+| | (1) "Oscillation Principles of LDOs"              |Toshiba|([Doc](https://toshiba.semicon-storage.com/info/application_note_en_20210326_AKX00308.pdf?did=67687))|
 |Noise Analysis||||
 | | (1) "LDO noise examined in detail"              |Texas Instruments|([Doc](https://www.ti.com/lit/an/slyt489/slyt489.pdf?ts=1684193235984))|
 | | (2) "LDO Noise Demystified"                     |Texas Instruments|([Doc](https://www.ti.com/lit/an/slaa412b/slaa412b.pdf?ts=1684193366800))|
