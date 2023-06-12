@@ -12,7 +12,7 @@
 &ensp; *3- "Jitter & Phase Noise Understanding":* </br>
 &ensp; &ensp; &ensp; Understand the relationship between phase noise & jitter + understand how each block contributes to the total phase noise. </br>
 &ensp; &ensp; &ensp; &ensp; &ensp; a) Check the technical notes about PLL jitter & phase noise below. </br>
-&ensp; &ensp; &ensp; &ensp; &ensp; => [Project] Connect all the circuit blocks together, & optimize based on the jitter & the phase noise requirements.</br></br> </br>
+&ensp; &ensp; &ensp; &ensp; &ensp; => [Project] Connect all the circuit blocks together, & optimize based on the jitter & the phase noise requirements.</br></br>
 
 # Courses
 | | Course | Instructor | Affiliation | Material | PLL Lectures|
@@ -29,3 +29,17 @@
 |---:|---|---|---|
 | 1|"Design of Analog CMOS Integrated Circuits" - CH 16    | by Razavi   | ([Ref](https://drive.google.com/file/d/14HT0R-oztZRAJbOOP0i4hZYRGIiUSPJD))|
 | 2|"Design of CMOS PLLs"                                  |by Razavi    | ([Ref](https://drive.google.com/file/d/1pkin8NZktw55MCJYCk_KjVBS1WnJyZQd/))|
+
+# Technical Documents
+|||||
+|---:|---|---|---|
+||||
+| 1| "Practical Tips for PLL Design"| Dennis Fischette |([Site](https://www.delroy.com/PLL_dir/pll.htm)) ([Docs](https://drive.google.com/file/d/1GcYZ-5Dmts4HL2uMz5SmjmuEwoTcmYgy))|
+| 2| "PLL Fundamentals"    | Dean Banerjee - TI|([Slides](https://drive.google.com/drive/folders/1uUDOyvCSBSp6G3UI9uv4MGyx7vH1ovVd)) ([Book](https://www.ti.com/lit/ml/snaa106c/snaa106c.pdf))|
+| 3| Jitter & Phase Noise  |||
+|  | (A) "Converting Oscillator Phase Noise to Time Jitter"| Walt Kester - AnalogDevices|([Docs](https://www.analog.com/media/en/training-seminars/tutorials/MT-008.pdf))|
+|  | (B) "Phase Locked Loop Noise Transfer Functions"| Peter Delos - LockheedMartin|([Docs](https://www.highfrequencyelectronics.com/index.php?option=com_content&view=article&id=1354:phase-locked-loop-noise-transfer-functions&catid=134:2016-01-january-articles&Itemid=189))|
+|  | (C) "Timing Jitter - Tutorial & Measurement Guide"| Silicon Labs Timing|([Docs](https://www.mouser.com/pdfdocs/timing-jitter-tutorial-and-measurement-guide-ebook.pdf))|
+|  | (D) ISSCC2012: "Jitter basics and advanced concepts"| Nicola Da Dalt - Infineon|([Docs](https://drive.google.com/file/d/1TEHrjFmUKhwwGLLrArSvR6PgWYO75l5A))|
+|  | (E) ESSCIRC2019: "Fundamental Concepts in Jitter and Phase Noise"| Ali Sheikholeslami - Univ of Toronto|([Docs](https://drive.google.com/file/d/1-bdD9vR_FgfasawexiEQEdjoDEzLiPEh))|
+
