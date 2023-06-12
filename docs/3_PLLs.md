@@ -13,3 +13,12 @@
 &ensp; &ensp; &ensp; Understand the relationship between phase noise & jitter + understand how each block contributes to the total phase noise. </br>
 &ensp; &ensp; &ensp; &ensp; &ensp; a) Check the technical notes about PLL jitter & phase noise below. </br>
 &ensp; &ensp; &ensp; &ensp; &ensp; => [Project] Connect all the circuit blocks together, & optimize based on the jitter & the phase noise requirements.</br></br> </br>
+
+# Courses
+| | Course | Instructor | Affiliation | Material | PLL Lectures|
+|---:|---|---|---|---|---|
+|    |   |   |   |   |   |
+| 1| EE 230 : "RFIC II"  | Dr. Sang-Soo Lee  | SJSU |([Material](https://drive.google.com/drive/folders/1WcP2svOrAle0cEzlL1oexYeuDEQjH5j9))| Lecs: 16 - 21 |
+| 2| ECEN 620: "Network Theory: Broadband Circuit Design" | Dr. Sam Palermo   | Texas A&M Univ|([Site](https://people.engr.tamu.edu/spalermo/ecen620.html?fbclid=IwAR2SWKe_MPtf0ppmeYcn-hc3iDoC0JvFNAA6rgvxQDsvzCfM15htVaWEZuo)) ([Material](https://drive.google.com/drive/folders/1lpc9RQN0gua415adOnqK3tUChHH6Mqif?usp=sharing))| Lecs: 1 - 11 |
+| 3| ECE 504: "PLL & High-Speed Link design"  | Dr. Vishal Saxena | Univ of Idaho |([Material](https://drive.google.com/drive/folders/176nN4prJmCzLWFan0TysT9ifXJiWUich?usp=sharing))| Lecs: ALL|
+| 4| "High-Speed Serial Interface Circuits & Systems"  | Dr. Woo Choi | Yonsei Univ |([Site](http://tera.yonsei.ac.kr/class/2021_2_2/main.htm)) ([Material](https://drive.google.com/drive/folders/1vfblDuzH_SzOzE_7qD8c-JpRa6OSgap9?usp=drive_link))| Lecs: 1 - 5 |
