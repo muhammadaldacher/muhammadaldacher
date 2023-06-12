@@ -2,9 +2,9 @@
 | | Topic | Instructor | Affiliation | Material |
 |---:|---|---|---|---|
 |    |   |   |   |   |
-| |(1) Regulators Lecture       | Dr. Tony Carusone  | Univ of Toronto |([Video Tutorial](https://youtu.be/SqqmuJRSM4Q)) ([Slides](https://drive.google.com/file/d/1zZxtUFNPS5GrxDBP9RRBc0UPlw9ItiYt/view?usp=share_link))|
-| |(2) LDO Tutorial - CICC 2015 | Dr. Pavan Hanumolu | Univ of Illinois|([Video Tutorial](https://youtu.be/WcpG0rOPVrA)) ([Slides](https://drive.google.com/file/d/1P8G08vWfY59YGABwvxHxn4j_djwR7jZM/view?usp=share_link))|
-| |(3) LDO Architecture Review  |                    | Texas Instruments|([Video Tutorial](https://www.youtube.com/watch?v=YwVV2X96PCs))|
+| 1| Regulators Lecture       | Dr. Tony Carusone  | Univ of Toronto |([Video Tutorial](https://youtu.be/SqqmuJRSM4Q)) ([Slides](https://drive.google.com/file/d/1zZxtUFNPS5GrxDBP9RRBc0UPlw9ItiYt/view?usp=share_link))|
+| 2| LDO Tutorial - CICC 2015 | Dr. Pavan Hanumolu | Univ of Illinois|([Video Tutorial](https://youtu.be/WcpG0rOPVrA)) ([Slides](https://drive.google.com/file/d/1P8G08vWfY59YGABwvxHxn4j_djwR7jZM/view?usp=share_link))|
+| 3| LDO Architecture Review  |                    | Texas Instruments|([Video Tutorial](https://www.youtube.com/watch?v=YwVV2X96PCs))|
 
 # Technical Documents
 |||||
@@ -24,8 +24,8 @@
 # Project
 |||||
 |---:|---|---|---|
-| | (1) LDO Project |([Report](https://users.ece.cmu.edu/~hengyuj/LDO%20report.pdf))| |
-| | (2) LDO Masters Thesis I |([Report](https://fenix.tecnico.ulisboa.pt/downloadFile/395138344001/LDO.pdf))| |
-| | (3) LDO Masters Thesis II|([Report](https://drive.google.com/file/d/1SKI5zFYWHX6_BPR2TMWm18ADG5bWkRss/view?usp=share_link))| |
+| 1| LDO Project |([Report](https://users.ece.cmu.edu/~hengyuj/LDO%20report.pdf))| |
+| 2| LDO Masters Thesis I |([Report](https://fenix.tecnico.ulisboa.pt/downloadFile/395138344001/LDO.pdf))| |
+| 3| LDO Masters Thesis II|([Report](https://drive.google.com/file/d/1SKI5zFYWHX6_BPR2TMWm18ADG5bWkRss/view?usp=share_link))| |
 
 > Google Drive: ([Link](https://drive.google.com/drive/folders/11WlKr1ar0_heg_nlZuHI34cM_RyIOaeJ?usp=sharing))
