@@ -2,9 +2,9 @@
 | | Topic | Instructor | Affiliation | Material |
 |---:|---|---|---|---|
 |    |   |   |   |   |
-| |(1) EE290C: High-Speed Electrical Interface Circuit Design| Dr. Elad Alon   | UC Berkeley   |([Video_Lecs](http://www.infocobuild.com/education/audio-video-courses/electronics/ee290c-spring2011-berkeley.html?fbclid=IwAR23W7obWKf40gd1LqVmmJOnVVMk50hOKzefl-b1qzqkUFuDNwtq0GFgWWU)) ([Site](http://bwrcs.eecs.berkeley.edu/Classes/icdesign/ee290c_s11/lectures.html)) ([Material "including my notes"](https://drive.google.com/drive/folders/1ZwYongTUiRKDY1YGtJqVbDAnrdattSmx?usp=sharing))|
-| |(2) ECEN720: High-Speed Links Circuits & Systems          | Dr. Sam Palermo | Texas A&M Univ|([Site](https://people.engr.tamu.edu/spalermo/ecen720.html)) ([Material](https://drive.google.com/drive/folders/1KeWEnu8V9QHZdYsWmqNMpd_b2-hYXDzF?usp=sharing))|
-| |(3) ECE623: Signaling & Synchronization - Microprocessors and Interfacing Circuits| Dr. Sameh Assem | Ain Shams Univ|([Material](https://drive.google.com/drive/folders/0B-sYTk-Q69hJSjlEbGZLUi1BbVE?resourcekey=0-VEmwfpoNLiRWvxmaNM1hYA&usp=share_link))|
+| 1| EE290C: High-Speed Electrical Interface Circuit Design| Dr. Elad Alon   | UC Berkeley   |([Video_Lecs](http://www.infocobuild.com/education/audio-video-courses/electronics/ee290c-spring2011-berkeley.html?fbclid=IwAR23W7obWKf40gd1LqVmmJOnVVMk50hOKzefl-b1qzqkUFuDNwtq0GFgWWU)) ([Site](http://bwrcs.eecs.berkeley.edu/Classes/icdesign/ee290c_s11/lectures.html)) ([Material "including my notes"](https://drive.google.com/drive/folders/1ZwYongTUiRKDY1YGtJqVbDAnrdattSmx?usp=sharing))|
+| 2| ECEN720: High-Speed Links Circuits & Systems          | Dr. Sam Palermo | Texas A&M Univ|([Site](https://people.engr.tamu.edu/spalermo/ecen720.html)) ([Material](https://drive.google.com/drive/folders/1KeWEnu8V9QHZdYsWmqNMpd_b2-hYXDzF?usp=sharing))|
+| 3| ECE623: Signaling & Synchronization - Microprocessors and Interfacing Circuits| Dr. Sameh Assem | Ain Shams Univ|([Material](https://drive.google.com/drive/folders/0B-sYTk-Q69hJSjlEbGZLUi1BbVE?resourcekey=0-VEmwfpoNLiRWvxmaNM1hYA&usp=share_link))|
 
 # Technical Documents
 |||||
