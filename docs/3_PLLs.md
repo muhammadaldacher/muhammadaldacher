@@ -33,7 +33,6 @@
 # Technical Documents
 |||||
 |---:|---|---|---|
-||||
 | 1| "Practical Tips for PLL Design"| Dennis Fischette |([Site](https://www.delroy.com/PLL_dir/pll.htm)) ([Docs](https://drive.google.com/file/d/1GcYZ-5Dmts4HL2uMz5SmjmuEwoTcmYgy))|
 | 2| "PLL Fundamentals"    | Dean Banerjee - TI|([Slides](https://drive.google.com/drive/folders/1uUDOyvCSBSp6G3UI9uv4MGyx7vH1ovVd)) ([Book](https://www.ti.com/lit/ml/snaa106c/snaa106c.pdf))|
 | 3| Jitter & Phase Noise  |||
@@ -43,3 +42,10 @@
 |  | (D) ISSCC2012: "Jitter basics and advanced concepts"| Nicola Da Dalt - Infineon|([Docs](https://drive.google.com/file/d/1TEHrjFmUKhwwGLLrArSvR6PgWYO75l5A))|
 |  | (E) ESSCIRC2019: "Fundamental Concepts in Jitter and Phase Noise"| Ali Sheikholeslami - Univ of Toronto|([Docs](https://drive.google.com/file/d/1-bdD9vR_FgfasawexiEQEdjoDEzLiPEh))|
 
+# Project
+|||||
+|---:|---|---|---|
+| 1| "1.9-GHz PLL design" |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-1.9-GHz-PLL-system))| |
+| 2| PLL Masters Thesis by Rishi Ratan |([Report](https://hdl.handle.net/2142/49509)) ([Site](https://www.ideals.illinois.edu/items/49560))| |
+
+> Google Drive: ([Link](https://drive.google.com/drive/folders/1Zg5deNV4TfbXPfwJipUkGqU3kteMFmFe?usp=sharing))
