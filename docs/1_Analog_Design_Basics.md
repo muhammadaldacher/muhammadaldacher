@@ -26,7 +26,8 @@
 | |**Analog ICs Basics**|  |  |  |
 | | |(A) Dr. Hesham Omran        | Ain Shams Univ  |([Video Lecs](https://www.master-micro.com/professional-courses/analog-ic-design))[Arabic] ([Slides](https://drive.google.com/drive/folders/1OWcbg8f48_ilr8jptdFEA3nbNeQyD0Hi))|
 | | |(B) Dr. Tony Carusone       | Univ of Toronto | ([Video Lecs](https://www.youtube.com/playlist?list=PLUJOuapA83-QlWbnMJvoyQucGaBlpBF0F))|
-| | |(C) Dr. Hiu Yung Wong       | SJSU            | ([Video Lecs](https://www.youtube.com/playlist?list=PLnK6MrIqGXsLL_IYksrx2ErnCucYRqXjF)) ([Post](https://www.linkedin.com/feed/update/urn:li:activity:7047438085277569024/))|
+| | |(C) Dr. Michael H. Perrott  | CPPSIM          | ([Lec Notes](https://cppsim.com/CircuitLectures/))|
+| | |(D) Dr. Hiu Yung Wong       | SJSU            | ([Video Lecs](https://www.youtube.com/playlist?list=PLnK6MrIqGXsLL_IYksrx2ErnCucYRqXjF)) ([Post](https://www.linkedin.com/feed/update/urn:li:activity:7047438085277569024/))|
 | |(More in-depth Lecs)|  |  |  |
 | | |(A) Dr. Behzad Razavi       | UCLA            |([Video Lecs](https://youtube.com/playlist?list=PLyYrySVqmyVPzvVlPW-TTzHhNWg1J_0LU))|
 | | |(B) Dr. Ali Hajimiri        | Caltech         |([Video Lecs](https://youtube.com/playlist?list=PLc7Gz02Znph-c2-ssFpRrzYwbzplXfXUT))|
@@ -38,7 +39,16 @@
 |---:|---|---|---|
 | 1|"Microelectronic Circuits"         |by Sedra & Smith   | ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJNm9KcEt1X1ZibjQ?resourcekey=0-b4S6wGCVicRM07cDVEP-hw&usp=share_link))|
 | 2|"Fundamentals of Microelectronics" |by Razavi          | ([Ref + Slides](https://drive.google.com/drive/folders/0B-sYTk-Q69hJb3FCZFY3Y0I1U0E?resourcekey=0-Moxu6Zv_P8ndIVCjvre0EQ&usp=share_link))|
-	
+
+# OpAmp Design Summary Notes
+|||||
+|---:|---|---|---|
+| 1|"DESIGN OF TWO-STAGE OP AMPS"| Dr. Phillip Allen   | ([Notes](https://aicdesign.org/wp-content/uploads/2018/08/lecture23-160311.pdf))|
+| 2|"Basic Two Stage CMOS Opamp" | Dr. Michael Perrott | ([Notes](https://www.cppsim.com/CircuitLectures/Lecture17.pdf))|
+| 3|"Basic OpAmp Design & Compensation" | Dr. Hua Tang | ([Notes](https://www.d.umn.edu/~htang/ECE5211_doc_files/ECE5211_files/Chapter6_part1.pdf))|
+| 4|"HANDBOOK OF OPERATIONAL AMPLIFIER APPLICATIONS"| Texas Instruments | ([Notes](https://www.ti.com/lit/an/sboa092b/sboa092b.pdf?ts=1679229361503))|
+> Google Drive: ([Link](https://drive.google.com/drive/folders/1ZEQy3DRNkUcqRgiphwvJWkDWMY95FWq5?usp=sharing)) 
+
 # Labs & Project
 |||||
 |---:|---|---|---|
