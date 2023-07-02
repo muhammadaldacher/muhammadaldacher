@@ -14,6 +14,7 @@ Here are some ideas to get you started:
 - 💬 Ask me about ...
 - ⚡ Fun fact: ...
 -->
+---
 ## Study Material
 Here, I will try to organize a study roadmap for people interested in Analog & Mixed-Signal design, based on my experience & what I studied before:
 1. [Analog Design Basics](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/1_Analog_Design_Basics.md)
@@ -23,6 +24,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 5. [LDOs (Low-Dropout Regulators)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/5_LDOs.md)
 6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)⚡(work-in-progress)
 7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)
+
 ---
 ## Projects
 | | Project | Category | Year |
@@ -58,6 +60,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 |  8 | [EE250 - Probability](https://drive.google.com/drive/folders/1dzB8DTLad82G_ewS9C0NndqMrKV5JgXn)| 2019 | Fall |
 |  9 | [EE210 - LinearSystems](https://drive.google.com/drive/folders/1UaLbYzHEQJgwkm-EXSBJfqVmOckCmXtj)| 2020 | Fall |
 
+---
 <!--
 1. Cadence Tool
 2. Layout
@@ -69,3 +72,5 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 - Razavi AnalogMind Articles ([drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)) ([Linkedin Post](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d))</br>
 - Interview Questions ([drive](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link))</br>
 - Resume-Building Docs ([drive](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link))</br>
+
+---
