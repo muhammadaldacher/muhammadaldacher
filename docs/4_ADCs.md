@@ -36,3 +36,30 @@
 | 2| ECE 486: "Analog Integrated Systems Design"        | Dr. Hesham Omran | Ain Shams Univ  |([Videos & Material](https://www.master-micro.com/professional-courses/analog-systems-design))[Arabic]|
 | 3| EE 505: "CMOS and BiCMOS Data Conversion Circuits" | Dr. Randy Geiger | Iowa State Univ |([Videos & Material](http://class.ece.iastate.edu/rlgeiger/Randy505/?fbclid=IwAR1WIn6QDdOqlHgPRl__w9kuLnfBPydm33x12G5-zDX1ilXNkS6iDqh7gnY))|
 | 4| "ADC and DAC" Playlist | "ALL ABOUT ELECTRONICS" |  |([Videos](https://youtube.com/playlist?list=PLwjK_iyK4LLCnW-df-_53d-6yYrGb9zZc))|
+
+# References
+|||||
+|---:|---|---|---|
+| 1|"CMOS Data Converters for Communications"     | by Gustavsson| ([Ref](https://drive.google.com/file/d/1M6u7kcCi23wva3ddAbEqMXQc7HddzA1X/view))|
+| 2|"Principles of Data Conversion System Design" | by Razavi    | ([Ref](https://drive.google.com/file/d/1mWoMSFOqtsYJD_Kp8JNWCEjG_3vsgG4D/view))|
+| 3|"Electronics Tutorial: Converters"            | "Analog Devices"| ([Ref](https://www.analog.com//media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter6.pdf))|
+
+# Technical Documents
+|||||
+|---:|---|---|---|
+| 1| "Analog-to-Digital Converter Architectures and Choices for System Design"| Brian Black |([Article - Analog Dialogue](https://www.analog.com/en/analog-dialogue/articles/analog-to-digital-converter-architectures-and-choices.html))|
+
+# Project
+|||||
+|---:|---|---|---|
+| 1| "Ideal 10-bit Pipeline ADC & DAC" |([Repo](https://github.com/muhammadaldacher/Modeling-of-10-bit-Pipeline-ADC-and-10-bit-DAC))| |
+| 2| "Ideal 4-bit Flash ADC & DAC"     |([Repo](https://github.com/muhammadaldacher/Modeling-of-4-bit-Flash-ADC-and-4-bit-DAC))| |
+| 3| "Bootstrapped Switch"             |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-Bootstrapped-Switch))| |
+| 4| "Dynamic Comparator"              |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-Dynamic-Comparator))| |
+| 5| "Current-steering DAC"            |([Repo](https://github.com/muhammadaldacher/Analog-design-of-4-bit-current-steering-DACs))| |
+| 6| "Pipeline ADC with Boosted OpAmp" |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-1.5-bit-Pipeline-ADC-And-Boosted-OpAmp))| |
+| 7| "Async SAR ADC" + Ideal Model     |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-Asynchronous-SAR-ADC))| |
+|||||
+| 8| Dr. Hesham's ECE 486 labs   |([Repo](https://drive.google.com/drive/folders/1Q7ZbEdv-5skkqEj5j8ooOujP1t5eUBgP))| |
+
+> Google Drive: ([Link](https://drive.google.com/drive/folders/12Qqfw_TX1i7dvVVYXksaSdHV4gth1OD5?usp=sharing))
