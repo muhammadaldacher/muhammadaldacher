@@ -1,3 +1,5 @@
+> Thanks to Eng. [Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-70430914a/) who collected a lot of these material.
+
 # Suggested Study Plan
 &ensp; *1- "PLL System-Level":* </br>
 &ensp; &ensp; &ensp; Understand the general operation of PLLs + how to derive the open & closed loop equations. </br>
@@ -22,7 +24,6 @@
 | 2| ECEN 620: "Network Theory: Broadband Circuit Design" | Dr. Sam Palermo   | Texas A&M Univ|([Site](https://people.engr.tamu.edu/spalermo/ecen620.html?fbclid=IwAR2SWKe_MPtf0ppmeYcn-hc3iDoC0JvFNAA6rgvxQDsvzCfM15htVaWEZuo)) ([Material](https://drive.google.com/drive/folders/1lpc9RQN0gua415adOnqK3tUChHH6Mqif?usp=sharing))| Lecs: 1 - 11 |
 | 3| ECE 504: "PLL & High-Speed Link design"  | Dr. Vishal Saxena | Univ of Idaho |([Material](https://drive.google.com/drive/folders/176nN4prJmCzLWFan0TysT9ifXJiWUich?usp=sharing))| Lecs: ALL|
 | 4| "High-Speed Serial Interface Circuits & Systems"  | Dr. Woo Choi | Yonsei Univ |([Site](http://tera.yonsei.ac.kr/class/2021_2_2/main.htm)) ([Material](https://drive.google.com/drive/folders/1vfblDuzH_SzOzE_7qD8c-JpRa6OSgap9?usp=drive_link))| Lecs: 1 - 5 |
-> Thanks to Eng. [Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-70430914a/) who collected most of these material.
 
 # References
 |||||
