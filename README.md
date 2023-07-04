@@ -3,7 +3,6 @@
 >> -> [ [Study Material](https://github.com/muhammadaldacher#study-material) ]</br>
 >> -> [ [Projects](https://github.com/muhammadaldacher#projects) ]</br>
 >> -> [ [MSc Courses (SJSU)](https://github.com/muhammadaldacher#msc-courses-sjsu) ]</br>
->> -> [ [Extras](https://github.com/muhammadaldacher#extras) ]</br>
 <!--
 **muhammadaldacher/muhammadaldacher** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 Here are some ideas to get you started:
@@ -24,6 +23,14 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 5. [LDOs (Low-Dropout Regulators)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/5_LDOs.md)
 6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)
 7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)
+</br>..................................................................................
+- [Layout](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/-Layout.md)
+- [Cadence Tutorials](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link)
+- [Razavi References](https://drive.google.com/drive/folders/1nh3xIubKoVVnNqBn1ol3yg5K-O-5yp5A?usp=share_link)
+- [Razavi AnalogMind Articles](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d) - [drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)
+</br>..................................................................................
+- [Interview Questions](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link)
+- [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link)
 
 ---
 ## Projects
@@ -61,16 +68,4 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 |  9 | [EE210 - LinearSystems](https://drive.google.com/drive/folders/1UaLbYzHEQJgwkm-EXSBJfqVmOckCmXtj)| 2020 | Fall |
 
 ---
-<!--
-1. Cadence Tool
-2. Layout
-3. EM/IR
--->
-## Extras
-- Cadence Tool Stuff ([drive](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link))
-- Razavi References ([drive](https://drive.google.com/drive/folders/1nh3xIubKoVVnNqBn1ol3yg5K-O-5yp5A?usp=share_link))</br>
-- Razavi AnalogMind Articles ([drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)) ([Linkedin Post](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d))</br>
-- Interview Questions ([drive](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link))</br>
-- Resume-Building Docs ([drive](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link))</br>
 
----
