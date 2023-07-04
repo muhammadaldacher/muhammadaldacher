@@ -1,4 +1,4 @@
-As an Analog & Mixed-Signal Designer, it is important to understand the **Digital logic basics**, in addition to the Analog circuits basics.
+> As an Analog & Mixed-Signal Designer, it is important to understand the **Digital logic basics**, in addition to the Analog circuits basics.
 # Studying Digital-logic/circuits Basics
 &ensp; 1- Understand the basics of Digital logic design, using logic gates & flipflops as blackboxes.</br>
 &ensp; 2- Try to have some proficiency with an HDL, either Verilog or VHDL. </br>
