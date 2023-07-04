@@ -14,3 +14,12 @@
 |||||
 |---:|---|---|---|
 | 1|"RF Microelectronics" | by Razavi    | ([Ref](https://drive.google.com/file/d/1J1iy8j_v9wKrRhAuCboXs8Qv9ayyqKOE/view)) ([Slides](https://drive.google.com/drive/folders/1VZ5elcOLjfUo2nfjHptPOz1tLvmfYsmJ))|
+
+# Project
+|||||
+|---:|---|---|---|
+| 1| "LNA design at 2.4GHz" |([Repo](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA))| |
+| 2| "RF Rx frontend components design at 1.9GHz" |([Repo](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend))| |
+|||||
+| 3| Texas A&M RF Labs |([Material](https://drive.google.com/drive/folders/1IqLZa1fLoVKyintaXXIvkZ59Qth8F2RE))| |
+| 4| Cadence SpectreRF Workshop |([Material](https://drive.google.com/drive/folders/1EyWSli_Tct7-xBW0FI6V7MEp3UkXGouV))| |
