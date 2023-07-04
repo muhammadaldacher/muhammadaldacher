@@ -22,7 +22,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 3. [PLLs (Phase-Locked Loops)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/3_PLLs.md)
 4. [ADCs (Analog/Digital Converters)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/4_ADCs.md)
 5. [LDOs (Low-Dropout Regulators)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/5_LDOs.md)
-6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)⚡(work-in-progress)
+6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)
 7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)
 
 ---
