@@ -21,7 +21,7 @@
 | 1| "Custom Layout Design"                    | Team VLSI   | ([PPT](https://docs.google.com/presentation/d/13XbBbZsdwDjN_7xo4q8RtwJGniDqFLaT/edit?usp=drive_link&ouid=101999425188430706076&rtpof=true&sd=true)),([Vids](https://youtube.com/playlist?list=PLC7JCwKQnjL5fR-0F8DPZYUbZVG81PC5E))|
 | 2| "Various Standard cells for ASIC Design"  | Team VLSI   | ([PPT](https://drive.google.com/drive/folders/1YZ-U1Wr_Z-El2wVP777LDujKvsUZjiYc)),([Vids](https://youtube.com/playlist?list=PLC7JCwKQnjL7yAJgfEXGYod3QfpeG3DOX))|
 | 3| "Various Issues in VLSI design"           | Team VLSI   | ([PPT](https://drive.google.com/drive/folders/1fjIQH3TK1YWQ1iSlInYBSULXjzz346GJ?usp=drive_link)),([Vids](https://youtube.com/playlist?list=PLC7JCwKQnjL7AOxgKHOAm1W2x8iOevWsl))|
-| 4| "SERDES Layout"           | Analog Layout & Design   | ([Vids](https://youtu.be/FulhvA-mXz8))|
+| 4| "SERDES Layout"           | Analog Layout & Design   | ([Vids](https://youtube.com/playlist?list=PLsE-ngCWLueWjScGiPLJS-9Elw-Vetqk8))|
 
 # References
 |||||
