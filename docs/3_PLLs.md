@@ -1,4 +1,4 @@
-> Thanks to Eng. [Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-70430914a/) who collected a lot of these material.
+> Thanks to Eng. [Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-70430914a/) for his contribution in collecting these material.
 
 # Suggested Study Plan
 &ensp; *1- "PLL System-Level":* </br>
