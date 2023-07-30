@@ -1,4 +1,4 @@
-> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) who collected a lot of these material.
+> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) for his contribution in collecting these material.
 
 # Intro Tutorials
 | | Tutorial | Instructor | Affiliation | Material |  |
