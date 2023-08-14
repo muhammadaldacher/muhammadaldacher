@@ -1,4 +1,4 @@
-> First, Check "[Introduction to Analog IC design](https://drive.google.com/file/d/1d1gdfgMIvZOywWhfwNaWBI2fNJjF2fAG/view?usp=drive_link)" by Prof. Hesham Omran & "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJTDRzTC1qZjFtSm8/view?usp=sharing&resourcekey=0-LBO4LOGI8kuvC2Yxie0LOA)" by Prof. Phillip Allen.
+> First, Check "[Introduction to Analog IC design](https://drive.google.com/file/d/1d1gdfgMIvZOywWhfwNaWBI2fNJjF2fAG/view?usp=drive_link)" by Prof. Hesham Omran & "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJSU4wU2g5a1A2d28/view?usp=drive_link&resourcekey=0-xnjs6p32SM27tfqlGXIGCg)" by Prof. Phillip Allen.
 # Studying Analog-Design Basics
 &ensp; 1- Complete one of the online courses (Choose one that you are comfortable studying from).</br>
 &ensp; 2- Derive the main equations by hand at least once.</br>
