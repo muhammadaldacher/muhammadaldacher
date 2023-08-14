@@ -5,7 +5,7 @@
 |---:|---|---|---|---|
 |    |   |   |   |   |
 |    | **-> "Transmission Line Basics"**  |   |   |   |
-| 1| ECE 546 - Advanced Signal Integrity  | Dr. Jose Schutt-Aine | Univ of Illinois  | ([Site](http://emlab.illinois.edu/ece546/schedule.html?fbclid=IwAR1x8n7wncNNKd7JkPcGqnR7fgLRU16_mN6q3ZKilbN37m7lU0iXHeOlLLw))  |
+| 1| ECE 546 - Advanced Signal Integrity  | Dr. Jose Schutt-Aine | Univ of Illinois  | ([Site](http://emlab.illinois.edu/ece546/schedule.html?fbclid=IwAR1x8n7wncNNKd7JkPcGqnR7fgLRU16_mN6q3ZKilbN37m7lU0iXHeOlLLw)) ([Material](https://drive.google.com/drive/folders/17Sm8ooJGJO4_IlHHsKUBZ6JDTOwZKosh?usp=drive_link)) |
 |    |   |   |   |   |
 |    | **-> "IO Circuits Design"**  |   |   |   |
 | 1| EE290C: High-Speed Electrical Interface Circuit Design| Dr. Elad Alon   | UC Berkeley   |([Video_Lecs](http://www.infocobuild.com/education/audio-video-courses/electronics/ee290c-spring2011-berkeley.html?fbclid=IwAR23W7obWKf40gd1LqVmmJOnVVMk50hOKzefl-b1qzqkUFuDNwtq0GFgWWU)) ([Video_Lecs "youtube version"](https://www.youtube.com/playlist?list=PLd2X0YiyVkXpFdodgzoYT9aVjt2MJYcUi)) ([Site](http://bwrcs.eecs.berkeley.edu/Classes/icdesign/ee290c_s11/lectures.html)) ([Material "including my notes"](https://drive.google.com/drive/folders/1ZwYongTUiRKDY1YGtJqVbDAnrdattSmx?usp=sharing))|
