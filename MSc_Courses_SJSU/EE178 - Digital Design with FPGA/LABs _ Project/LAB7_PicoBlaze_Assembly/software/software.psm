@@ -1,0 +1,62 @@
+;;============================================================================
+;; File: software.psm
+;; This is the PicoBlaze program for EE178 Lab #7.
+;;============================================================================
+
+;;============================================================================
+;; Port address declarations.
+;;============================================================================
+
+CONSTANT switches_lo     , 00 ; port for 8-bit switch input
+CONSTANT switches_hi     , 01 ; port for 8-bit switch input
+CONSTANT leds_lo         , 02 ; port for 8-bit led data out
+CONSTANT leds_hi         , 03 ; port for 8-bit led data out
+
+CONSTANT my_sid_lo       , 17 ; lo byte of student id (put yours here)
+CONSTANT my_sid_hi       , 03 ; hi byte of student id (put yours here)
+
+CONSTANT zero            , 00 ; zero
+CONSTANT one             , 01 ; one
+CONSTANT eight           , 08 ; eight
+
+;;============================================================================
+;; Infinite loop.
+;;============================================================================
+
+         loop: INPUT s0, switches_lo               ; get lo switch values
+               INPUT s1, switches_hi               ; get hi switch values
+               
+               COMPARE s0,my_sid_lo
+               JUMP NZ, countones
+               
+               COMPARE s1,my_sid_hi
+               JUMP NZ, countones
+
+               OUTPUT s0, leds_lo                  ; put lo led values
+               OUTPUT s1, leds_hi                  ; put hi led values
+
+               JUMP loop                           ; go back and repeat
+         
+         countones: LOAD s2, 00
+                    LOAD s3, 08
+                    
+                    checkbits:  SR0 s0
+                                ADDCY s2,00
+                                
+                                SR0 s1
+                                ADDCY s2,00
+                                
+                                SUB s3,01
+                                COMPARE s3,00
+                                JUMP NZ, checkbits
+                                
+                    OUTPUT s2, leds_lo
+                    LOAD s2, 00
+                    OUTPUT s2, leds_hi 
+                    
+                    JUMP loop                           ; go back and repeat
+                    
+                    
+;;============================================================================
+;;
+;;============================================================================
