@@ -1,0 +1,2119 @@
+                CONSTANT stax, 00               ; port for 8-bit start-x
+                CONSTANT stay, 01               ; port for 8-bit start-y
+                CONSTANT endx, 02               ; port for 8-bit end-x
+                CONSTANT endy, 03               ; port for 8-bit end-y
+                CONSTANT busy, 04               ; port for 8-bit busy
+                CONSTANT beam, 05               ; port for 8-bit beam
+                CONSTANT mode, 06               ; port for 8-bit mode
+                CONSTANT prng, 07               ; port for 8-bit prng
+                CONSTANT leds_lo, 08            ; port for 8-bit led data out
+                CONSTANT leds_hi, 09            ; port for 8-bit led data out
+                CONSTANT qssd_lo, 0A            ; port for 8-bit qssd data out
+                CONSTANT qssd_hi, 0B            ; port for 8-bit qssd data out
+                CONSTANT qssd_dp, 0C            ; port for 8-bit qssd data out
+                CONSTANT switches_lo, 0D        ; port for 8-bit switch input
+                CONSTANT switches_hi, 0E        ; port for 8-bit switch input
+                CONSTANT buttons, 0F            ; port for 8-bit button input
+                CONSTANT second, 10             ; port for second counter
+                CONSTANT minute, 11             ; port for second counter
+                CONSTANT hour, 12               ; port for second counter
+                CONSTANT busy_go, 01            ; go command and busy status
+                CONSTANT beam_hi, 0F            ; beam high intensity
+                CONSTANT beam_md, 07            ; beam med intensity
+                CONSTANT beam_lo, 03            ; beam low intensity
+                CONSTANT mode_hld, 00           ; mode hold framebuffer
+                CONSTANT mode_clr, 01           ; mode clear framebuffer
+                CONSTANT mode_lin, 02           ; mode linear decay
+                CONSTANT mode_exp, 03           ; mode exponential decay
+                CONSTANT buttons_ct, 10         ; center
+                CONSTANT buttons_up, 08         ; up
+                CONSTANT buttons_dn, 04         ; down
+                CONSTANT buttons_lf, 02         ; left
+                CONSTANT buttons_rt, 01         ; right
+                NAMEREG s0, gs_major
+                CONSTANT gs_major_attrone, 00   ; state assignment
+                CONSTANT gs_major_attrtwo, 01   ; state assignment
+                CONSTANT gs_major_playing, 02   ; state assignment
+                CONSTANT gs_major_gameend, 03   ; state assignment
+                NAMEREG s1, gs_minor
+                CONSTANT gs_minor_begins, 00    ; counter initialize
+                CONSTANT gs_minor_twosec, 78    ; frame count about 2.0 secs
+                CONSTANT gs_minor_onesec, 3C    ; frame count about 1.0 secs
+                CONSTANT gs_minor_getrdy, 1E    ; frame count about 0.5 secs
+                NAMEREG s2, gs_ballx
+                NAMEREG s3, gs_bally
+                NAMEREG s4, gs_balldx
+                NAMEREG s5, gs_balldy
+                CONSTANT gs_ball_xdim, 08       ; it's this plus 1
+                CONSTANT gs_ball_ydim, 08       ; it's this plus 1
+                CONSTANT gs_ball_speed, 03      ; pixels per frame
+                NAMEREG s6, gs_padlx
+                CONSTANT gs_padly, D0           ; paddle y location
+                CONSTANT gs_padl_xdim, 20       ; it's this plus 1
+                CONSTANT gs_padl_ydim, 08       ; it's this plus 1
+                CONSTANT gs_padl_speed, 04      ; pixels per frame
+                NAMEREG s7, resvd1              ; reserved
+                NAMEREG s8, resvd2              ; reserved
+                NAMEREG s9, xpos                ; for drawing routines
+                NAMEREG sA, ypos                ; for drawing routines
+                NAMEREG sB, swlsamp             ; switch lo sample
+                NAMEREG sC, swhsamp             ; switch hi sample
+                NAMEREG sD, btnsamp             ; button sample
+                NAMEREG sE, loopvar             ; for loops
+                NAMEREG sF, scratch             ; for scratch
+                CONSTANT minusone, FF           ; minusone
+                CONSTANT minusmax, 80           ; minus 128
+                CONSTANT plusmax, 7F            ; plus 127
+                CONSTANT zero, 00               ; zero
+                CONSTANT one, 01                ; one
+          boot: CALL hw_init                    ; initial hardware setup
+                CALL gs_init                    ; set initial game state
+                ENABLE INTERRUPT                ; enable vblnk interrupt
+          main: JUMP main                       ; empty loop, does nothing
+                ;;============================================================================
+           isr: LOAD resvd1, zero               ;
+                CALL user_input                 ; get the user input
+                RETURNI ENABLE                  ; return with enable
+       hw_init: LOAD scratch, zero              ; going to use lot of zero
+                OUTPUT scratch, leds_lo         ; turn off lo leds
+                OUTPUT scratch, leds_hi         ; turn off hi leds
+                OUTPUT scratch, qssd_lo         ; zeroize qssd lo
+                OUTPUT scratch, qssd_hi         ; zeroize qssd hi
+                OUTPUT scratch, qssd_dp         ; turn off qssd dots
+                LOAD scratch, mode_exp          ; load desired mode
+                OUTPUT scratch, mode            ; program the framebuffer
+                LOAD scratch, beam_hi           ; load desired beam
+                OUTPUT scratch, beam            ; program the framebuffer
+  hw_init_wait: INPUT scratch, busy             ; get framebuffer busy
+                COMPARE scratch, busy_go        ; check framebuffer busy
+                JUMP Z, hw_init_wait            ; back to wait if busy
+                RETURN                          ; return
+                ;;============================================================================
+       gs_init: LOAD gs_major, gs_major_attrone ; start in attract mdoe
+                LOAD gs_minor, gs_minor_begins  ; start with counter zero
+                LOAD gs_ballx, zero             ; doesn't really matter
+                LOAD gs_bally, zero             ; doesn't really matter
+                LOAD gs_padlx, zero             ; doesn't really matter
+                LOAD gs_balldx, zero            ; doesn't really matter
+                LOAD gs_balldy, zero            ; doesn't really matter
+                RETURN                          ; return
+                ;;============================================================================
+    user_input: CALL main_dis                   ;
+                RETURN 
+      main_dis: LOAD resvd1, 00                 ;
+                INPUT resvd1, switches_hi       ;
+                AND resvd1, 30                  ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, analog_clock            ;
+                COMPARE resvd1, 30              ;
+                JUMP Z, digital_clock           ;
+                RETURN                          ;
+                ;;-----------------------------------------------------------------------------------------------------
+  analog_clock: CALL dis_ana_three              ;
+                CALL dis_ana_twelve             ;
+                CALL dis_ana_six                ;
+                CALL dis_ana_nine               ;
+                CALL dis_sec_unit               ;
+                CALL dis_min_unit               ;
+                CALL dis_hr_unit                ;
+                CALL dis_dot_dot                ;
+                RETURN                          ;
+   dis_dot_dot: LOAD xpos, A3
+                LOAD ypos, 4A
+                CALL moveto
+                LOAD xpos, A3
+                LOAD ypos, 4A
+                CALL drawto
+                LOAD xpos, BA
+                LOAD ypos, 62
+                CALL moveto
+                LOAD xpos, BA
+                LOAD ypos, 62
+                CALL drawto
+                LOAD xpos, BA
+                LOAD ypos, A2
+                CALL moveto
+                LOAD xpos, BA
+                LOAD ypos, A2
+                CALL drawto
+                LOAD xpos, A3
+                LOAD ypos, BA
+                CALL moveto
+                LOAD xpos, A3
+                LOAD ypos, BA
+                CALL drawto
+                LOAD xpos, 61
+                LOAD ypos, BA
+                CALL moveto
+                LOAD xpos, 61
+                LOAD ypos, BA
+                CALL drawto
+                LOAD xpos, 4A
+                LOAD ypos, A2
+                CALL moveto
+                LOAD xpos, 4A
+                LOAD ypos, A2
+                CALL drawto
+                LOAD xpos, 4A
+                LOAD ypos, 62
+                CALL moveto
+                LOAD xpos, 4A
+                LOAD ypos, 62
+                CALL drawto
+                LOAD xpos, 61
+                LOAD ypos, 4A
+                CALL moveto
+                LOAD xpos, 61
+                LOAD ypos, 4A
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 41
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 41
+                CALL drawto
+                LOAD xpos, C3
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C3
+                LOAD ypos, 82
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, C3
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, C3
+                CALL drawto
+                LOAD xpos, 41
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 41
+                LOAD ypos, 82
+                CALL drawto
+                RETURN 
+   dis_ana_six: LOAD xpos, 7B                   ; draw second 6
+                LOAD ypos, C8
+                CALL moveto
+                LOAD xpos, 7E
+                LOAD ypos, D2
+                CALL drawto
+                LOAD xpos, 81
+                LOAD ypos, C8
+                CALL drawto
+                LOAD xpos, 83
+                LOAD ypos, C8
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, C8
+                CALL drawto
+                LOAD xpos, 83
+                LOAD ypos, D2
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, D2
+                CALL drawto
+                LOAD xpos, 86
+                LOAD ypos, C8
+                CALL moveto
+                LOAD xpos, 86
+                LOAD ypos, D2
+                CALL drawto
+                RETURN 
+  dis_ana_nine: LOAD xpos, 30                   ; draw second 9
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, 35
+                LOAD ypos, 7D
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 87
+                CALL moveto
+                LOAD xpos, 35
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, 33
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, 33
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, 37
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, 3C
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, 3C
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, 37
+                LOAD ypos, 87
+                CALL drawto
+                RETURN 
+dis_ana_twelve: LOAD xpos, 7B                   ; draw second 12
+                LOAD ypos, 32
+                CALL moveto
+                LOAD xpos, 81
+                LOAD ypos, 3C
+                CALL drawto
+                LOAD xpos, 81
+                LOAD ypos, 32
+                CALL moveto
+                LOAD xpos, 7B
+                LOAD ypos, 3C
+                CALL drawto
+                LOAD xpos, 83
+                LOAD ypos, 32
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, 32
+                CALL drawto
+                LOAD xpos, 83
+                LOAD ypos, 3C
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, 3C
+                CALL drawto
+                LOAD xpos, 85
+                LOAD ypos, 32
+                CALL moveto
+                LOAD xpos, 85
+                LOAD ypos, 3C
+                CALL drawto
+                LOAD xpos, 87
+                LOAD ypos, 32
+                CALL moveto
+                LOAD xpos, 87
+                LOAD ypos, 3C
+                CALL drawto
+                RETURN 
+ dis_ana_three: LOAD xpos, C8                   ; draw second 3
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, D2
+                LOAD ypos, 7D
+                CALL drawto
+                LOAD xpos, C8
+                LOAD ypos, 87
+                CALL moveto
+                LOAD xpos, D2
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, CA
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, CD
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, CD
+                LOAD ypos, 87
+                CALL drawto
+                LOAD xpos, D0
+                LOAD ypos, 7D
+                CALL moveto
+                LOAD xpos, D0
+                LOAD ypos, 87
+                CALL drawto
+                RETURN 
+  dis_sec_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, second            ;
+                AND resvd1, FF                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, sec_unit_0              ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, sec_unit_1              ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, sec_unit_2              ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, sec_unit_3              ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, sec_unit_4              ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, sec_unit_5              ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, sec_unit_6              ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, sec_unit_7              ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, sec_unit_8              ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, sec_unit_9              ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, sec_unit_10             ;
+                COMPARE resvd1, 11              ;
+                JUMP Z, sec_unit_11             ;
+                COMPARE resvd1, 12              ;
+                JUMP Z, sec_unit_12             ;
+                COMPARE resvd1, 13              ;
+                JUMP Z, sec_unit_13             ;
+                COMPARE resvd1, 14              ;
+                JUMP Z, sec_unit_14             ;
+                COMPARE resvd1, 15              ;
+                JUMP Z, sec_unit_15             ;
+                COMPARE resvd1, 16              ;
+                JUMP Z, sec_unit_16             ;
+                COMPARE resvd1, 17              ;
+                JUMP Z, sec_unit_17             ;
+                COMPARE resvd1, 18              ;
+                JUMP Z, sec_unit_18             ;
+                COMPARE resvd1, 19              ;
+                JUMP Z, sec_unit_19             ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, sec_unit_20             ;
+                COMPARE resvd1, 21              ;
+                JUMP Z, sec_unit_21             ;
+                COMPARE resvd1, 22              ;
+                JUMP Z, sec_unit_22             ;
+                COMPARE resvd1, 23              ;
+                JUMP Z, sec_unit_23             ;
+                COMPARE resvd1, 24              ;
+                JUMP Z, sec_unit_24             ;
+                COMPARE resvd1, 25              ;
+                JUMP Z, sec_unit_25             ;
+                COMPARE resvd1, 26              ;
+                JUMP Z, sec_unit_26             ;
+                COMPARE resvd1, 27              ;
+                JUMP Z, sec_unit_27             ;
+                COMPARE resvd1, 28              ;
+                JUMP Z, sec_unit_28             ;
+                COMPARE resvd1, 29              ;
+                JUMP Z, sec_unit_29             ;
+                COMPARE resvd1, 30              ;
+                JUMP Z, sec_unit_30             ;
+                COMPARE resvd1, 31              ;
+                JUMP Z, sec_unit_31             ;
+                COMPARE resvd1, 32              ;
+                JUMP Z, sec_unit_32             ;
+                COMPARE resvd1, 33              ;
+                JUMP Z, sec_unit_33             ;
+                COMPARE resvd1, 34              ;
+                JUMP Z, sec_unit_34             ;
+                COMPARE resvd1, 35              ;
+                JUMP Z, sec_unit_35             ;
+                COMPARE resvd1, 36              ;
+                JUMP Z, sec_unit_36             ;
+                COMPARE resvd1, 37              ;
+                JUMP Z, sec_unit_37             ;
+                COMPARE resvd1, 38              ;
+                JUMP Z, sec_unit_38             ;
+                COMPARE resvd1, 39              ;
+                JUMP Z, sec_unit_39             ;
+                COMPARE resvd1, 40              ;
+                JUMP Z, sec_unit_40             ;
+                COMPARE resvd1, 41              ;
+                JUMP Z, sec_unit_41             ;
+                COMPARE resvd1, 42              ;
+                JUMP Z, sec_unit_42             ;
+                COMPARE resvd1, 43              ;
+                JUMP Z, sec_unit_43             ;
+                COMPARE resvd1, 44              ;
+                JUMP Z, sec_unit_44             ;
+                COMPARE resvd1, 45              ;
+                JUMP Z, sec_unit_45             ;
+                COMPARE resvd1, 46              ;
+                JUMP Z, sec_unit_46             ;
+                COMPARE resvd1, 47              ;
+                JUMP Z, sec_unit_47             ;
+                COMPARE resvd1, 48              ;
+                JUMP Z, sec_unit_48             ;
+                COMPARE resvd1, 49              ;
+                JUMP Z, sec_unit_49             ;
+                COMPARE resvd1, 50              ;
+                JUMP Z, sec_unit_50             ;
+                COMPARE resvd1, 51              ;
+                JUMP Z, sec_unit_51             ;
+                COMPARE resvd1, 52              ;
+                JUMP Z, sec_unit_52             ;
+                COMPARE resvd1, 53              ;
+                JUMP Z, sec_unit_53             ;
+                COMPARE resvd1, 54              ;
+                JUMP Z, sec_unit_54             ;
+                COMPARE resvd1, 55              ;
+                JUMP Z, sec_unit_55             ;
+                COMPARE resvd1, 56              ;
+                JUMP Z, sec_unit_56             ;
+                COMPARE resvd1, 57              ;
+                JUMP Z, sec_unit_57             ;
+                COMPARE resvd1, 58              ;
+                JUMP Z, sec_unit_58             ;
+                COMPARE resvd1, 59              ;
+                JUMP Z, sec_unit_59             ;
+                RETURN                          ;
+    sec_unit_0: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 41
+                CALL drawto
+                RETURN 
+    sec_unit_1: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, 41
+                CALL drawto
+                RETURN 
+    sec_unit_2: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 90
+                LOAD ypos, 42
+                CALL drawto
+                RETURN 
+    sec_unit_3: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 96
+                LOAD ypos, 44
+                CALL drawto
+                RETURN 
+    sec_unit_4: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 9C
+                LOAD ypos, 47
+                CALL drawto
+                RETURN 
+    sec_unit_5: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A3
+                LOAD ypos, 4A
+                CALL drawto
+                RETURN 
+    sec_unit_6: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A8
+                LOAD ypos, 4D
+                CALL drawto
+                RETURN 
+    sec_unit_7: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, AD
+                LOAD ypos, 52
+                CALL drawto
+                RETURN 
+    sec_unit_8: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, B2
+                LOAD ypos, 57
+                CALL drawto
+                RETURN 
+    sec_unit_9: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, B7
+                LOAD ypos, 5C
+                CALL drawto
+                RETURN 
+   sec_unit_10: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, BA
+                LOAD ypos, 62
+                CALL drawto
+                RETURN 
+   sec_unit_11: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, BD
+                LOAD ypos, 68
+                CALL drawto
+                RETURN 
+   sec_unit_12: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C0
+                LOAD ypos, 6D
+                CALL drawto
+                RETURN 
+   sec_unit_13: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C1
+                LOAD ypos, 74
+                CALL drawto
+                RETURN 
+   sec_unit_14: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C2
+                LOAD ypos, 7B
+                CALL drawto
+                RETURN 
+   sec_unit_15: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C3
+                LOAD ypos, 82
+                CALL drawto
+                RETURN 
+   sec_unit_16: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C2
+                LOAD ypos, 88
+                CALL drawto
+                RETURN 
+   sec_unit_17: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C1
+                LOAD ypos, 8F
+                CALL drawto
+                RETURN 
+   sec_unit_18: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, C0
+                LOAD ypos, 96
+                CALL drawto
+                RETURN 
+   sec_unit_19: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, BD
+                LOAD ypos, 9C
+                CALL drawto
+                RETURN 
+   sec_unit_20: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, BA
+                LOAD ypos, A2
+                CALL drawto
+                RETURN 
+   sec_unit_21: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, B7
+                LOAD ypos, A8
+                CALL drawto
+                RETURN 
+   sec_unit_22: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, B2
+                LOAD ypos, AD
+                CALL drawto
+                RETURN 
+   sec_unit_23: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, AD
+                LOAD ypos, B2
+                CALL drawto
+                RETURN 
+   sec_unit_24: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A8
+                LOAD ypos, B6
+                CALL drawto
+                RETURN 
+   sec_unit_25: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A3
+                LOAD ypos, BA
+                CALL drawto
+                RETURN 
+   sec_unit_26: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 9C
+                LOAD ypos, BD
+                CALL drawto
+                RETURN 
+   sec_unit_27: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 96
+                LOAD ypos, C0
+                CALL drawto
+                RETURN 
+   sec_unit_28: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 90
+                LOAD ypos, C1
+                CALL drawto
+                RETURN 
+   sec_unit_29: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 89
+                LOAD ypos, C2
+                CALL drawto
+                RETURN 
+   sec_unit_30: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, C3
+                CALL drawto
+                RETURN 
+   sec_unit_31: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 7B
+                LOAD ypos, C2
+                CALL drawto
+                RETURN 
+   sec_unit_32: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 74
+                LOAD ypos, C1
+                CALL drawto
+                RETURN 
+   sec_unit_33: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 6E
+                LOAD ypos, C0
+                CALL drawto
+                RETURN 
+   sec_unit_34: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 67
+                LOAD ypos, BD
+                CALL drawto
+                RETURN 
+   sec_unit_35: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 61
+                LOAD ypos, BA
+                CALL drawto
+                RETURN 
+   sec_unit_36: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 5C
+                LOAD ypos, B6
+                CALL drawto
+                RETURN 
+   sec_unit_37: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 56
+                LOAD ypos, B2
+                CALL drawto
+                RETURN 
+   sec_unit_38: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 52
+                LOAD ypos, AD
+                CALL drawto
+                RETURN 
+   sec_unit_39: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 4D
+                LOAD ypos, A8
+                CALL drawto
+                RETURN 
+   sec_unit_40: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 4A
+                LOAD ypos, A2
+                CALL drawto
+                RETURN 
+   sec_unit_41: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 47
+                LOAD ypos, 9C
+                CALL drawto
+                RETURN 
+   sec_unit_42: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 44
+                LOAD ypos, 96
+                CALL drawto
+                RETURN 
+   sec_unit_43: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 43
+                LOAD ypos, 8F
+                CALL drawto
+                RETURN 
+   sec_unit_44: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 42
+                LOAD ypos, 88
+                CALL drawto
+                RETURN 
+   sec_unit_45: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 41
+                LOAD ypos, 82
+                CALL drawto
+                RETURN 
+   sec_unit_46: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 42
+                LOAD ypos, 7B
+                CALL drawto
+                RETURN 
+   sec_unit_47: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 43
+                LOAD ypos, 74
+                CALL drawto
+                RETURN 
+   sec_unit_48: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 44
+                LOAD ypos, 6D
+                CALL drawto
+                RETURN 
+   sec_unit_49: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 47
+                LOAD ypos, 68
+                CALL drawto
+                RETURN 
+   sec_unit_50: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 4A
+                LOAD ypos, 62
+                CALL drawto
+                RETURN 
+   sec_unit_51: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 4D
+                LOAD ypos, 5C
+                CALL drawto
+                RETURN 
+   sec_unit_52: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 52
+                LOAD ypos, 57
+                CALL drawto
+                RETURN 
+   sec_unit_53: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 56
+                LOAD ypos, 52
+                CALL drawto
+                RETURN 
+   sec_unit_54: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 5C
+                LOAD ypos, 4D
+                CALL drawto
+                RETURN 
+   sec_unit_55: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 61
+                LOAD ypos, 4A
+                CALL drawto
+                RETURN 
+   sec_unit_56: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 67
+                LOAD ypos, 47
+                CALL drawto
+                RETURN 
+   sec_unit_57: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 6E
+                LOAD ypos, 44
+                CALL drawto
+                RETURN 
+   sec_unit_58: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 74
+                LOAD ypos, 42
+                CALL drawto
+                RETURN 
+   sec_unit_59: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 7B
+                LOAD ypos, 41
+                CALL drawto
+                RETURN 
+  dis_min_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, minute            ;
+                AND resvd1, FF                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, sec_unit_0              ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, sec_unit_1              ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, sec_unit_2              ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, sec_unit_3              ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, sec_unit_4              ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, sec_unit_5              ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, sec_unit_6              ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, sec_unit_7              ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, sec_unit_8              ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, sec_unit_9              ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, sec_unit_10             ;
+                COMPARE resvd1, 11              ;
+                JUMP Z, sec_unit_11             ;
+                COMPARE resvd1, 12              ;
+                JUMP Z, sec_unit_12             ;
+                COMPARE resvd1, 13              ;
+                JUMP Z, sec_unit_13             ;
+                COMPARE resvd1, 14              ;
+                JUMP Z, sec_unit_14             ;
+                COMPARE resvd1, 15              ;
+                JUMP Z, sec_unit_15             ;
+                COMPARE resvd1, 16              ;
+                JUMP Z, sec_unit_16             ;
+                COMPARE resvd1, 17              ;
+                JUMP Z, sec_unit_17             ;
+                COMPARE resvd1, 18              ;
+                JUMP Z, sec_unit_18             ;
+                COMPARE resvd1, 19              ;
+                JUMP Z, sec_unit_19             ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, sec_unit_20             ;
+                COMPARE resvd1, 21              ;
+                JUMP Z, sec_unit_21             ;
+                COMPARE resvd1, 22              ;
+                JUMP Z, sec_unit_22             ;
+                COMPARE resvd1, 23              ;
+                JUMP Z, sec_unit_23             ;
+                COMPARE resvd1, 24              ;
+                JUMP Z, sec_unit_24             ;
+                COMPARE resvd1, 25              ;
+                JUMP Z, sec_unit_25             ;
+                COMPARE resvd1, 26              ;
+                JUMP Z, sec_unit_26             ;
+                COMPARE resvd1, 27              ;
+                JUMP Z, sec_unit_27             ;
+                COMPARE resvd1, 28              ;
+                JUMP Z, sec_unit_28             ;
+                COMPARE resvd1, 29              ;
+                JUMP Z, sec_unit_29             ;
+                COMPARE resvd1, 30              ;
+                JUMP Z, sec_unit_30             ;
+                COMPARE resvd1, 31              ;
+                JUMP Z, sec_unit_31             ;
+                COMPARE resvd1, 32              ;
+                JUMP Z, sec_unit_32             ;
+                COMPARE resvd1, 33              ;
+                JUMP Z, sec_unit_33             ;
+                COMPARE resvd1, 34              ;
+                JUMP Z, sec_unit_34             ;
+                COMPARE resvd1, 35              ;
+                JUMP Z, sec_unit_35             ;
+                COMPARE resvd1, 36              ;
+                JUMP Z, sec_unit_36             ;
+                COMPARE resvd1, 37              ;
+                JUMP Z, sec_unit_37             ;
+                COMPARE resvd1, 38              ;
+                JUMP Z, sec_unit_38             ;
+                COMPARE resvd1, 39              ;
+                JUMP Z, sec_unit_39             ;
+                COMPARE resvd1, 40              ;
+                JUMP Z, sec_unit_40             ;
+                COMPARE resvd1, 41              ;
+                JUMP Z, sec_unit_41             ;
+                COMPARE resvd1, 42              ;
+                JUMP Z, sec_unit_42             ;
+                COMPARE resvd1, 43              ;
+                JUMP Z, sec_unit_43             ;
+                COMPARE resvd1, 44              ;
+                JUMP Z, sec_unit_44             ;
+                COMPARE resvd1, 45              ;
+                JUMP Z, sec_unit_45             ;
+                COMPARE resvd1, 46              ;
+                JUMP Z, sec_unit_46             ;
+                COMPARE resvd1, 47              ;
+                JUMP Z, sec_unit_47             ;
+                COMPARE resvd1, 48              ;
+                JUMP Z, sec_unit_48             ;
+                COMPARE resvd1, 49              ;
+                JUMP Z, sec_unit_49             ;
+                COMPARE resvd1, 50              ;
+                JUMP Z, sec_unit_50             ;
+                COMPARE resvd1, 51              ;
+                JUMP Z, sec_unit_51             ;
+                COMPARE resvd1, 52              ;
+                JUMP Z, sec_unit_52             ;
+                COMPARE resvd1, 53              ;
+                JUMP Z, sec_unit_53             ;
+                COMPARE resvd1, 54              ;
+                JUMP Z, sec_unit_54             ;
+                COMPARE resvd1, 55              ;
+                JUMP Z, sec_unit_55             ;
+                COMPARE resvd1, 56              ;
+                JUMP Z, sec_unit_56             ;
+                COMPARE resvd1, 57              ;
+                JUMP Z, sec_unit_57             ;
+                COMPARE resvd1, 58              ;
+                JUMP Z, sec_unit_58             ;
+                COMPARE resvd1, 59              ;
+                JUMP Z, sec_unit_59             ;
+                RETURN                          ;
+   dis_hr_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, hour              ;
+                AND resvd1, FF                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, hr_unit_0               ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, hr_unit_1               ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, hr_unit_2               ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, hr_unit_3               ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, hr_unit_4               ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, hr_unit_5               ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, hr_unit_6               ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, hr_unit_7               ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, hr_unit_8               ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, hr_unit_9               ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, hr_unit_10              ;
+                COMPARE resvd1, 11              ;
+                JUMP Z, hr_unit_11              ;
+                COMPARE resvd1, 12              ;
+                JUMP Z, hr_unit_0               ;
+                COMPARE resvd1, 13              ;
+                JUMP Z, hr_unit_1               ;
+                COMPARE resvd1, 14              ;
+                JUMP Z, hr_unit_2               ;
+                COMPARE resvd1, 15              ;
+                JUMP Z, hr_unit_3               ;
+                COMPARE resvd1, 16              ;
+                JUMP Z, hr_unit_4               ;
+                COMPARE resvd1, 17              ;
+                JUMP Z, hr_unit_5               ;
+                COMPARE resvd1, 18              ;
+                JUMP Z, hr_unit_6               ;
+                COMPARE resvd1, 19              ;
+                JUMP Z, hr_unit_7               ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, hr_unit_8               ;
+                COMPARE resvd1, 21              ;
+                JUMP Z, hr_unit_9               ;
+                COMPARE resvd1, 22              ;
+                JUMP Z, hr_unit_10              ;
+                COMPARE resvd1, 23              ;
+                JUMP Z, hr_unit_11              ;
+                RETURN                          ;
+     hr_unit_0: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 55
+                CALL drawto
+                RETURN 
+     hr_unit_1: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 98
+                LOAD ypos, 5B
+                CALL drawto
+                RETURN 
+     hr_unit_2: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A9
+                LOAD ypos, 6B
+                CALL drawto
+                RETURN 
+     hr_unit_3: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, AF
+                LOAD ypos, 82
+                CALL drawto
+                RETURN 
+     hr_unit_4: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, A9
+                LOAD ypos, 98
+                CALL drawto
+                RETURN 
+     hr_unit_5: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 98
+                LOAD ypos, A9
+                CALL drawto
+                RETURN 
+     hr_unit_6: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, AF
+                CALL drawto
+                RETURN 
+     hr_unit_7: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 6B
+                LOAD ypos, A9
+                CALL drawto
+                RETURN 
+     hr_unit_8: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 5B
+                LOAD ypos, 98
+                CALL drawto
+                RETURN 
+     hr_unit_9: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 55
+                LOAD ypos, 82
+                CALL drawto
+                RETURN 
+    hr_unit_10: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 5B
+                LOAD ypos, 6B
+                CALL drawto
+                RETURN 
+    hr_unit_11: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 82
+                CALL moveto
+                LOAD xpos, 6B
+                LOAD ypos, 5B
+                CALL drawto
+                RETURN 
+ digital_clock: CALL disgi_sec_unit             ;
+                CALL disgi_sec_ten              ;
+                CALL disgi_min_unit             ;
+                CALL disgi_min_ten              ;
+                CALL disgi_hr_unit              ;
+                CALL disgi_hr_ten               ;
+                CALL disgi_dot_1                ;
+                CALL disgi_dot_2                ;
+                CALL disgi_dot_3                ;
+                CALL disgi_dot_4                ;
+                RETURN 
+   disgi_dot_1: LOAD xpos, 4F                   ; draw second 0
+                LOAD ypos, 55
+                CALL moveto
+                LOAD xpos, 4F
+                LOAD ypos, 65
+                CALL drawto
+                LOAD xpos, 59
+                LOAD ypos, 65
+                CALL drawto
+                LOAD xpos, 59
+                LOAD ypos, 55
+                CALL drawto
+                LOAD xpos, 4F
+                LOAD ypos, 55
+                CALL drawto
+                LOAD xpos, 4F
+                LOAD ypos, 65
+                CALL drawto
+                RETURN 
+   disgi_dot_2: LOAD xpos, 4F                   ; draw second 0
+                LOAD ypos, 75
+                CALL moveto
+                LOAD xpos, 4F
+                LOAD ypos, 85
+                CALL drawto
+                LOAD xpos, 59
+                LOAD ypos, 85
+                CALL drawto
+                LOAD xpos, 59
+                LOAD ypos, 75
+                CALL drawto
+                LOAD xpos, 4F
+                LOAD ypos, 75
+                CALL drawto
+                LOAD xpos, 4F
+                LOAD ypos, 85
+                CALL drawto
+                RETURN 
+   disgi_dot_3: LOAD xpos, A1                   ; draw second 0
+                LOAD ypos, 55
+                CALL moveto
+                LOAD xpos, A1
+                LOAD ypos, 65
+                CALL drawto
+                LOAD xpos, AB
+                LOAD ypos, 65
+                CALL drawto
+                LOAD xpos, AB
+                LOAD ypos, 55
+                CALL drawto
+                LOAD xpos, A1
+                LOAD ypos, 55
+                CALL drawto
+                LOAD xpos, A1
+                LOAD ypos, 65
+                CALL drawto
+                RETURN 
+   disgi_dot_4: LOAD xpos, A1                   ; draw second 0
+                LOAD ypos, 75
+                CALL moveto
+                LOAD xpos, A1
+                LOAD ypos, 85
+                CALL drawto
+                LOAD xpos, AB
+                LOAD ypos, 85
+                CALL drawto
+                LOAD xpos, AB
+                LOAD ypos, 75
+                CALL drawto
+                LOAD xpos, A1
+                LOAD ypos, 75
+                CALL drawto
+                LOAD xpos, A1
+                LOAD ypos, 85
+                CALL drawto
+                RETURN 
+disgi_sec_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, second            ;
+                AND resvd1, 0F                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, secgi_unit_0            ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, secgi_unit_1            ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, secgi_unit_2            ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, secgi_unit_3            ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, secgi_unit_4            ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, secgi_unit_5            ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, secgi_unit_6            ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, secgi_unit_7            ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, secgi_unit_8            ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, secgi_unit_9            ;
+                RETURN                          ;
+  secgi_unit_0: LOAD xpos, D4                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_1: LOAD xpos, ED                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_2: LOAD xpos, D4                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_3: LOAD xpos, D4                   ; draw second 3
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  secgi_unit_4: LOAD xpos, D4                   ; draw second 4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_5: LOAD xpos, ED
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_6: LOAD xpos, D4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  secgi_unit_7: LOAD xpos, D4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  secgi_unit_8: LOAD xpos, D4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  secgi_unit_9: LOAD xpos, ED
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, D4
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, D4
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, ED
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, ED
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+ disgi_sec_ten: LOAD resvd1, zero               ;
+                INPUT resvd1, second            ;
+                AND resvd1, F0                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, secgi_ten_0             ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, secgi_ten_1             ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, secgi_ten_2             ;
+                COMPARE resvd1, 30              ;
+                JUMP Z, secgi_ten_3             ;
+                COMPARE resvd1, 40              ;
+                JUMP Z, secgi_ten_4             ;
+                COMPARE resvd1, 50              ;
+                JUMP Z, secgi_ten_5             ;
+                COMPARE resvd1, 60              ;
+                JUMP Z, secgi_ten_6             ;
+                RETURN                          ;
+   secgi_ten_0: LOAD xpos, B1                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   secgi_ten_1: LOAD xpos, CA                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   secgi_ten_2: LOAD xpos, B1                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, CA
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   secgi_ten_3: LOAD xpos, B1                   ; draw second 3
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, CA
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, B1
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+   secgi_ten_4: LOAD xpos, B1                   ; draw second 4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, B1
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   secgi_ten_5: LOAD xpos, CA
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, B1
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   secgi_ten_6: LOAD xpos, B1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, B1
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, CA
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, B1
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+disgi_min_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, minute            ;
+                AND resvd1, 0F                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, mingi_unit_0            ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, mingi_unit_1            ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, mingi_unit_2            ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, mingi_unit_3            ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, mingi_unit_4            ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, mingi_unit_5            ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, mingi_unit_6            ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, mingi_unit_7            ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, mingi_unit_8            ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, mingi_unit_9            ;
+                RETURN                          ;
+  mingi_unit_0: LOAD xpos, 82                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_1: LOAD xpos, 9B                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_2: LOAD xpos, 82                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_3: LOAD xpos, 82                   ; draw second 3
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  mingi_unit_4: LOAD xpos, 82                   ; draw second 4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_5: LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_6: LOAD xpos, 82
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  mingi_unit_7: LOAD xpos, 82
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  mingi_unit_8: LOAD xpos, 82
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+  mingi_unit_9: LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 82
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 82
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 9B
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 9B
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+ disgi_min_ten: LOAD resvd1, zero               ;
+                INPUT resvd1, minute            ;
+                AND resvd1, F0                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, mingi_ten_0             ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, mingi_ten_1             ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, mingi_ten_2             ;
+                COMPARE resvd1, 30              ;
+                JUMP Z, mingi_ten_3             ;
+                COMPARE resvd1, 40              ;
+                JUMP Z, mingi_ten_4             ;
+                COMPARE resvd1, 50              ;
+                JUMP Z, mingi_ten_5             ;
+                COMPARE resvd1, 60              ;
+                JUMP Z, mingi_ten_6             ;
+                RETURN                          ;
+   mingi_ten_0: LOAD xpos, 5F                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   mingi_ten_1: LOAD xpos, 78                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   mingi_ten_2: LOAD xpos, 5F                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 78
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   mingi_ten_3: LOAD xpos, 5F                   ; draw second 3
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 78
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, 5F
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+   mingi_ten_4: LOAD xpos, 5F                   ; draw second 4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 5F
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   mingi_ten_5: LOAD xpos, 78
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 5F
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   mingi_ten_6: LOAD xpos, 5F
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 5F
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 78
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 5F
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+ disgi_hr_unit: LOAD resvd1, zero               ;
+                INPUT resvd1, hour              ;
+                AND resvd1, 0F                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, hrgi_unit_0             ;
+                COMPARE resvd1, 01              ;
+                JUMP Z, hrgi_unit_1             ;
+                COMPARE resvd1, 02              ;
+                JUMP Z, hrgi_unit_2             ;
+                COMPARE resvd1, 03              ;
+                JUMP Z, hrgi_unit_3             ;
+                COMPARE resvd1, 04              ;
+                JUMP Z, hrgi_unit_4             ;
+                COMPARE resvd1, 05              ;
+                JUMP Z, hrgi_unit_5             ;
+                COMPARE resvd1, 06              ;
+                JUMP Z, hrgi_unit_6             ;
+                COMPARE resvd1, 07              ;
+                JUMP Z, hrgi_unit_7             ;
+                COMPARE resvd1, 08              ;
+                JUMP Z, hrgi_unit_8             ;
+                COMPARE resvd1, 09              ;
+                JUMP Z, hrgi_unit_9             ;
+                RETURN                          ;
+   hrgi_unit_0: LOAD xpos, 30                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_1: LOAD xpos, 49                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_2: LOAD xpos, 30                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_3: LOAD xpos, 30                   ; draw second 3
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+   hrgi_unit_4: LOAD xpos, 30                   ; draw second 4
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_5: LOAD xpos, 49
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_6: LOAD xpos, 30
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+   hrgi_unit_7: LOAD xpos, 30
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+   hrgi_unit_8: LOAD xpos, 30
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                RETURN 
+   hrgi_unit_9: LOAD xpos, 49
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 30
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 30
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 49
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 49
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+  disgi_hr_ten: LOAD resvd1, zero               ;
+                INPUT resvd1, hour              ;
+                AND resvd1, F0                  ;
+                COMPARE resvd1, 00              ;
+                JUMP Z, hrgi_ten_0              ;
+                COMPARE resvd1, 10              ;
+                JUMP Z, hrgi_ten_1              ;
+                COMPARE resvd1, 20              ;
+                JUMP Z, hrgi_ten_2              ;
+                RETURN                          ;
+    hrgi_ten_0: LOAD xpos, 0D                   ; draw second 0
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 0D
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 26
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 26
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 0D
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 0D
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+    hrgi_ten_1: LOAD xpos, 26                   ; draw second 1
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 26
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+    hrgi_ten_2: LOAD xpos, 0D                   ; draw second 2
+                LOAD ypos, 50
+                CALL moveto
+                LOAD xpos, 26
+                LOAD ypos, 50
+                CALL drawto
+                LOAD xpos, 26
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 0D
+                LOAD ypos, 70
+                CALL drawto
+                LOAD xpos, 0D
+                LOAD ypos, 90
+                CALL drawto
+                LOAD xpos, 26
+                LOAD ypos, 90
+                CALL drawto
+                RETURN 
+                ;;============================================================================
+        moveto: OUTPUT xpos, endx               ; copy global to hardware
+                OUTPUT ypos, endy               ; copy global to hardware
+                RETURN                          ; return
+        drawto: INPUT scratch, endx             ; read hardware
+                OUTPUT scratch, stax            ; write hardware
+                OUTPUT xpos, endx               ; copy global to hardware
+                INPUT scratch, endy             ; read hardware
+                OUTPUT scratch, stay            ; write hardware
+                OUTPUT ypos, endy               ; copy global to hardware
+                LOAD scratch, busy_go           ; prepare the command
+                OUTPUT scratch, busy            ; send the command
+                CALL hw_init_wait               ; wait line draw done
+                RETURN                          ; return
+                ADDRESS 7FF                     ; must be located here
+    isr_vector: JUMP isr                        ; always jump to isr
+                ;;============================================================================
