@@ -1,0 +1,38 @@
+// VerilogA for EE230_PLL_VerilogA, Divider, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module Divider(clk,vout);
+
+parameter real vtrans=0.5;
+parameter real delay = 0;
+parameter real ttime = 1p;
+parameter real clk_threshold = 0.5;
+parameter real N = 64;
+
+input clk;
+output vout;
+
+electrical clk,vout;
+
+real counter,v_out;
+
+analog begin
+	
+	@(initial_step) begin
+		v_out = 0; counter = 0; end
+
+	@(cross(V(clk) - clk_threshold, +1)) 
+	begin
+		if(counter < ((N/2)-1)) begin
+			counter = counter +1; v_out = 0; end
+		else if(counter < (N-1)) begin
+			counter = counter +1; v_out = 1; end
+		else if (counter == (N-1)) begin
+			counter = 0; v_out = 0; end
+	end
+		
+	V(vout) <+ transition(v_out,delay,ttime);
+end
+endmodule

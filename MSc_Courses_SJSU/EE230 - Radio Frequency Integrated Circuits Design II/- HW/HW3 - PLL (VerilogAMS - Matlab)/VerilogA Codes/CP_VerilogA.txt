@@ -1,0 +1,25 @@
+// VerilogA for EE230_PLL_VerilogA, CP, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module CP(pout,nout,up,dn);
+	parameter real cur = 100u; //output current 100uA
+	parameter real threshold=0.5;
+	input up, dn;
+	output pout, nout;
+	electrical pout, nout, up, dn;
+	real out;
+
+	analog begin
+		@(initial_step) out = 0.5;
+		
+		if((V(dn)>0.5) && (V(up)<0.5)) begin
+			out = -cur; end
+		else if((V(dn)<0.5) && (V(up)>0.5)) begin
+			out = cur; end
+		else out = 0.0;
+
+		I(pout, nout) <+ -transition(out, 0.0, 10n, 10n);
+	end
+endmodule

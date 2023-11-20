@@ -1,0 +1,42 @@
+// VerilogA for EE230_PLL_VerilogA, PFD, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module PFD(up,dn,upb,dnb,fref,fdiv);
+
+parameter real vtrans=0.5;
+parameter real delay = 0;
+parameter real ttime = 1p;
+parameter real clk_threshold = 0.5;
+
+input fref;
+input fdiv;
+output up,upb,dn,dnb;
+
+electrical fref,fdiv,up,upb,dn,dnb;
+
+real fv_rst, fr_rst, reset, upr,upbr,dnr,dnbr;
+
+analog begin
+
+	@(cross(V(fref) - clk_threshold, +1)) 
+	begin
+		upr = 1; upbr = 0;
+	end
+
+	@(cross(V(fdiv) - clk_threshold, +1)) 
+	begin
+		dnr = 1; dnbr = 0;
+	end
+
+	if(dnr == upr) begin
+		upr = 0; dnr = 0; upbr = 1; dnbr = 1; end
+
+		
+	V(up) <+ transition(upr,delay,ttime);
+	V(dn) <+ transition(dnr,delay,ttime);
+	V(upb) <+ transition(upbr,delay,ttime);
+	V(dnb) <+ transition(dnbr,delay,ttime);
+end
+endmodule

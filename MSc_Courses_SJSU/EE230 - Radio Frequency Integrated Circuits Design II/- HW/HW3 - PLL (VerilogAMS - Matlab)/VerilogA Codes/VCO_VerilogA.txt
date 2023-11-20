@@ -1,0 +1,65 @@
+// VerilogA for testlib, VCO, VerilogA
+`include "constants.vams"
+`include "disciplines.vams"
+module VCO ( vin , out ) ;
+ 
+input vin ;
+output out ;
+electrical vin ;
+electrical out ;
+ 
+parameter real Vmin=0; // Minimum input voltage
+parameter real Vmax=Vmin+1 from (Vmin : inf ) ; // Maximum input voltage
+parameter real Fmin= 1.6e9 from ( 0 : inf) ; // Minimum output frequency
+parameter real Fmax=2.2e9 from (Fmin : inf ) ; // Maximum output frequency
+parameter real Vamp = 1 from [ 0 : inf ) ; // Output sinusoid amplitude
+parameter real ttol=1u/Fmax from ( 0 : 1 /Fmax ) ; // Crossing time tolerance
+parameter real vtol = 1e-9; // Voltage
+ 
+parameter integer min_pts_update=32 from [ 2 : inf ) ;
+ 
+parameter real tran_time = 10e-12 from ( 0 : 0.3 /Fmax ) ;
+
+parameter real jitter_std_ui = 0 from [ 0 : 1 ) ;
+
+// Internal Variables
+real freq ;
+real phase ;
+integer n ;
+integer seed ;
+real jitter_rad ;
+real dPhase ;
+real phase_ideal ;
+analog
+begin
+	@( initial_step )
+	begin
+		seed = 671;
+		n = 0 ;
+		dPhase = 0 ;
+		jitter_rad = jitter_std_ui * 2 * `M_PI ;
+	end
+	
+	// compute the freq from the input voltage
+	freq = ( (V(vin) - Vmin) * (Fmax - Fmin) / (Vmax - Vmin) ) + Fmin ;
+
+	$bound_step (1/( min_pts_update * freq ) ) ;
+	if ( freq > Fmax) freq = Fmax ;
+	if ( freq < Fmin) freq = Fmin ;
+	phase_ideal = 2 * `M_PI * idtmod(freq, 0.0, 1.0, -0.5);
+	phase = phase_ideal + dPhase ;
+	
+	@( cross(phase_ideal + `M_PI/2, +1, ttol, vtol) or cross(phase_ideal - `M_PI/2, +1, ttol, vtol))
+	begin
+		dPhase = $rdist_normal(seed,0,jitter_rad);
+	end
+
+	@( cross(phase + `M_PI/2, +1, ttol, vtol) or cross(phase - `M_PI/2, +1, ttol, vtol))
+	begin
+		n = ( phase >= -`M_PI/2)&&(phase < `M_PI / 2 ) ;
+	end
+
+	// generate the output
+	V( out ) <+ transition (n?Vamp:0 , 0 , tran_time);
+end
+endmodule
