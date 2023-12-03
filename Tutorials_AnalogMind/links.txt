@@ -1,0 +1,69 @@
+The Design of a Comparator:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9265306
+The Design of Broadband I/O Circuits:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_2_2021.pdf
+The z-Transform for Analog Designers:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9177143
+The Design of an Equalizer—Part One:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2021.pdf
+The Design of an Equalizer—Part Two:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_1_2022.pdf
+The Design of An LDO Regulator:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine5.pdf
+Design of High-Speed CDR Circuits:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRAug02.pdf
+The Design of a Millimeter-Wave VCO:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_2_2022.pdf
+The Active Inductor:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9123639
+The Ring Oscillator:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2019.pdf
+The Transimpedance Amplifier:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_1_2019.pdf
+The Low Dropout Regulator:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8741287
+The Harmonic-Rejection Mixer:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2018.pdf
+The Delay-Locked Loop:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_3_2018.pdf
+The Biquadratic Filter:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_SPR_18.pdf
+The Current-Steering DAC:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRWinter18DAC.pdf
+The Decision-Feedback Equalizer:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRFall17DFE.pdf
+The Flash ADC:
+https://picture.iczhiku.com/resource/eetop/wHKTYqSQdyaQQXNN.pdf
+The Crystal Oscillator:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRSpring17CrystalOsc.pdf
+The Switched-Capacitor Integrator:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRWinter17SwCap.pdf
+TSPC Logic:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRFall16TSPC.pdf
+The Bandgap Reference:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRSummer16Bandgap.pdf
+The Delta-Sigma Modulator:
+https://www.seas.ucla.edu/brweb/papers/Journals/BRSpring16DeltaSigma.pdf
+Translational Circuits:
+http://www.seas.ucla.edu/brweb/papers/Journals/BRWinter16Translation.pdf
+The Bridged T-Coil:
+https://www.seas.ucla.edu/brweb/papers/Journals/BRFall15TCoil.pdf
+The Bootstrapped Switch:
+https://www.seas.ucla.edu/brweb/papers/Journals/BRSummer15Switch.pdf
+The StrongARM Latch:
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine4.pdf
+Cross-Coupled Pair—Part I:
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine1.pdf
+Cross-Coupled Pair—Part II:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine2.pdf
+Cross-Coupled Pair—Part III:
+http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine3.pdf
+
+
+
+
+
+
+Razavi's Publications:
+https://academictree.org/etree/publications.php?pid=180951
+
