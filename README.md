@@ -44,14 +44,15 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 |  6 | [Modeling of 4-bit Flash ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-4-bit-Flash-ADC-and-4-bit-DAC)                    | ADC design |  2018 |
 |  7 | [Modeling of 10-bit Pipeline ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-10-bit-Pipeline-ADC-and-10-bit-DAC)           | ADC design |  2018 |
 |  8 | [1.9-GHz PLL design](https://github.com/muhammadaldacher/Analog-Design-of-1.9-GHz-PLL-system)                                         | PLL Design |  2018 |
-|  9 | [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    | RF design |  2018 |
-|  10| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    | RF design |  2016 |
-|  11| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) | IO design |  2013 |
-|  12| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       | Layout |  2017 |
-|  13| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 | Layout |  2013 |
-|  14| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) | FPGA |  2017 |
-|  15| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      | Signal Processing |  2020 |
-|  16| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  | Signal Processing |  2020 |
+|  9 | [LDO Regulator design](https://github.com/muhammadaldacher/Analog-Design-of-LDO-with-PMOS-pass-device)                                | LDO Design |  2023 |
+|  10| [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    | RF design |  2018 |
+|  11| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    | RF design |  2016 |
+|  12| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) | IO design |  2013 |
+|  13| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       | Layout |  2017 |
+|  14| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 | Layout |  2013 |
+|  15| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) | FPGA |  2017 |
+|  16| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      | Signal Processing |  2020 |
+|  17| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  | Signal Processing |  2020 |
 
 ---
 ## MSc Courses (SJSU)
