@@ -24,8 +24,9 @@
 # Project
 |||||
 |---:|---|---|---|
-| 1| LDO Project |([Report](https://users.ece.cmu.edu/~hengyuj/LDO%20report.pdf))| |
-| 2| LDO Masters Thesis I |([Report](https://fenix.tecnico.ulisboa.pt/downloadFile/395138344001/LDO.pdf))| |
-| 3| LDO Masters Thesis II|([Report](https://drive.google.com/file/d/1SKI5zFYWHX6_BPR2TMWm18ADG5bWkRss/view?usp=share_link))| |
+| 1| LDO Project I |([Repo](https://github.com/muhammadaldacher/Analog-Design-of-LDO-with-PMOS-pass-device))| |
+| 2| LDO Project II|([Report](https://users.ece.cmu.edu/~hengyuj/LDO%20report.pdf))| |
+| 3| LDO Masters Thesis I |([Report](https://fenix.tecnico.ulisboa.pt/downloadFile/395138344001/LDO.pdf))| |
+| 4| LDO Masters Thesis II|([Report](https://drive.google.com/file/d/1SKI5zFYWHX6_BPR2TMWm18ADG5bWkRss/view?usp=share_link))| |
 
 > Google Drive: ([Link](https://drive.google.com/drive/folders/11WlKr1ar0_heg_nlZuHI34cM_RyIOaeJ?usp=sharing))
