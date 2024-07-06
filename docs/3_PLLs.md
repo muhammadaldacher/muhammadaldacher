@@ -14,7 +14,7 @@
 &ensp; *3- "Jitter & Phase Noise Understanding":* </br>
 &ensp; &ensp; &ensp; Understand the relationship between phase noise & jitter + understand how each block contributes to the total phase noise. </br>
 &ensp; &ensp; &ensp; &ensp; &ensp; a) Check the technical notes about PLL jitter & phase noise below. </br>
-&ensp; &ensp; &ensp; &ensp; &ensp; => [Project] Connect all the circuit blocks together, & optimize based on the jitter & the phase noise requirements.</br></br>
+&ensp; &ensp; &ensp; &ensp; &ensp; => [Project] Connect all the circuit blocks together, & optimize the design based on the jitter & the phase noise requirements.</br></br>
 
 # Courses
 | | Course | Instructor | Affiliation | Material | PLL Lectures|
