@@ -1,4 +1,6 @@
-> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) for his contribution in collecting these material.
+> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) & Eng. [Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-70430914a/) for their contribution in collecting these material.
+>
+> -> Introductory session about High-Speed SERDES systems by Eng. Ahmad Ragab: ["High-Speed Energy-Efficient Serial Links"](https://www.youtube.com/watch?v=IFMNxU26y7s) [Arabic]
 
 # Courses
 | | Topic | Instructor | Affiliation | Material |
@@ -21,6 +23,8 @@
 | | (1) "High-Speed Serial I/O Design Overview"                  |Texas A&M - Sam Palermo  |([Doc](https://drive.google.com/file/d/0B-sYTk-Q69hJZjlZQkJJSXlQQkE/view?usp=share_link&resourcekey=0-b0ql_In9ZDxU6Bp_X7WflA))|
 | | (2) "A systems approach to building modern high-speed links" |MIT - Vladimir Stojanović|([Doc](https://drive.google.com/file/d/1OUZMYtpJL1DjUxcxGQiRSP5-BS-C1-rz/view?usp=share_link))|
 | | (3) "Design Challenges Of High-Speed Wireline Transmitters"  |Synopsis - Samad Parekh & Noman Hai|([Doc](https://semiengineering.com/design-challenges-of-high-speed-wireline-transmitters/))|
+|Theses||||
+| | (1) "Design of High-Speed SerDesTransceiver for Chip-to-Chip Communications in CMOS Process" |University of Lincoln - Xuqiang Zheng |([Thesis](https://drive.google.com/file/d/117QbbflJ9cEOd2zq4z_o7gUyIzUMd6O2/view?usp=drive_link)) (Great Literature Review in CH2)|
 
 # Project
 |||||
