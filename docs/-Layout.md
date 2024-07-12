@@ -1,4 +1,5 @@
-> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) for his contribution in collecting these material.
+> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) for his contribution in collecting these material.</br>
+> Also, Check his posts on layout & packaging resources: [[Part1](https://www.linkedin.com/posts/fadysabrynegm_digital-ic-design-1-complete-youtube-activity-7065751257587625984-RFhn?utm_source=share&utm_medium=member_desktop)], [[Part2](https://www.linkedin.com/posts/fadysabrynegm_semiconductor-packaging-activity-7216760038390960130-az9e?utm_source=share&utm_medium=member_desktop)]
 
 # Intro Tutorials
 | | Tutorial | Instructor | Affiliation | Material |  |
