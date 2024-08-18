@@ -29,7 +29,9 @@
 # Project
 |||||
 |---:|---|---|---|
-| | Analog IC design of high speed serial link transceiver for 10 GbaseKR standard using a 65 nm CMOS process |([Repo](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS))| |
+| | ITI SERDES Course Assignments/Labs |([Material](https://drive.google.com/drive/folders/1R1wGUw3wpd6EAEa2nzSE-6C92Uq5Mu18?usp=drive_link))| |
 | | "High-Speed Serial Interface Circuits & Systems" Course Assignments - Yonsei Univ |([Material](https://drive.google.com/drive/folders/1jxkTF-jJh1PhQ3s9-GbJaT-TQqjr-CLj?usp=drive_link))| |
+| | Analog IC design of high speed serial link transceiver for 10 GbaseKR standard using a 65 nm CMOS process |([Repo](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS))| |
+
 
 > Google Drive: ([Link](https://drive.google.com/drive/folders/18UgchQcC6WAQv8TTE4eqWMKUVKctPWQn?usp=share_link))
