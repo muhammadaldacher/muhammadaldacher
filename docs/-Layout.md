@@ -1,5 +1,5 @@
-> Thanks to Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/) for his contribution in collecting these material.</br>
-> Also, Check his posts on layout & packaging resources: [[Part1](https://www.linkedin.com/posts/fadysabrynegm_digital-ic-design-1-complete-youtube-activity-7065751257587625984-RFhn?utm_source=share&utm_medium=member_desktop)], [[Part2](https://www.linkedin.com/posts/fadysabrynegm_semiconductor-packaging-activity-7216760038390960130-az9e?utm_source=share&utm_medium=member_desktop)]
+> -> Eng. [Fady Sabry Negm](https://www.linkedin.com/in/fadysabrynegm/)'s roadmap for Layout & Packaging: [[Part1](https://www.linkedin.com/posts/fadysabrynegm_digital-ic-design-1-complete-youtube-activity-7065751257587625984-RFhn?utm_source=share&utm_medium=member_desktop)], [[Part2](https://www.linkedin.com/posts/fadysabrynegm_semiconductor-packaging-activity-7216760038390960130-az9e?utm_source=share&utm_medium=member_desktop)] </br>
+> -> Eng. [Ahmad Eshennawy](https://www.linkedin.com/in/ahmadeshennawy/)'s roadmap for the Analog Layout track: [[Link](https://www.linkedin.com/feed/update/urn:li:activity:7237913922018639872/)]
 
 # Intro Tutorials
 | | Tutorial | Instructor | Affiliation | Material |  |
