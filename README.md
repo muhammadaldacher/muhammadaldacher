@@ -45,7 +45,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 | |  6 | [Modeling of 4-bit Flash ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-4-bit-Flash-ADC-and-4-bit-DAC)                    |  2018 |
 | |  7 | [Modeling of 10-bit Pipeline ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-10-bit-Pipeline-ADC-and-10-bit-DAC)           |  2018 |
 | Clocking ||||
-| |  8 | [10-GHz Standing-Wave based Clocking-Distribution Network design](https://github.com/muhammadaldacher/Analog-Design-of-clocking-distribution-network-using-Standing-Waves)|  2018 |
+| |  8 | [10-GHz Standing-Wave based Clock-Distribution Network design](https://github.com/muhammadaldacher/Analog-Design-of-Clock-Distribution-Network-using-Standing-Waves)|  2022 |
 | |  9 | [1.9-GHz PLL design](https://github.com/muhammadaldacher/Analog-Design-of-1.9-GHz-PLL-system)                                         |  2018 |
 | LDOs ||||
 | |  10 | [LDO Regulator design](https://github.com/muhammadaldacher/Analog-Design-of-LDO-with-PMOS-pass-device)                                |  2018 |
