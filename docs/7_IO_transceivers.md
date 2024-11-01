@@ -26,6 +26,12 @@
 |Theses||||
 | | (1) "Design of High-Speed SerDesTransceiver for Chip-to-Chip Communications in CMOS Process" |University of Lincoln - Xuqiang Zheng |([Thesis](https://drive.google.com/file/d/117QbbflJ9cEOd2zq4z_o7gUyIzUMd6O2/view?usp=drive_link)) (Great Literature Review in CH2)|
 
+# For PAM4 Signaling
+||||
+|:---|---|---|
+|(1) "PAM4 Signaling for 56G Serial Link Applications - A Tutorial"     |Xilinx  |([Doc](https://www.xilinx.com/publications/events/designcon/2016/slides-pam4signalingfor56gserial-zhang-designcon.pdf))|
+|(2) "AN 835: PAM4 Signaling Fundamentals"                              |Intel   |([Doc](https://cdrdv2-public.intel.com/667071/an835-683852-667071.pdf))|
+
 # Project
 |||||
 |---:|---|---|---|
