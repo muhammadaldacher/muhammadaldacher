@@ -24,15 +24,15 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 6. [RF receiver system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/6_RF_Rx.md)
 7. [IO/SERDES system](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/7_IO_transceivers.md)
 </br>..................................................................................
-<!--
+
 - [Layout](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/-Layout.md)
-- [Cadence Tutorials](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link) -->
+- [Cadence Tutorials](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link)
 - [Razavi References](https://drive.google.com/drive/folders/1nh3xIubKoVVnNqBn1ol3yg5K-O-5yp5A?usp=share_link)
 - [Razavi AnalogMind Articles](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d) - [drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)
 </br>..................................................................................
-<!--
+
 - [Interview Questions](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link)
-- [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link) -->
+- [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link) 
 
 ---
 ## Projects
