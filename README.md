@@ -55,15 +55,16 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 | |  11| [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    |  2018 |
 | |  12| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    |  2016 |
 | SERDES ||||
-| |  13| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
+| |  13| [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2022 |
+| |  14| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
 | Layout ||||
-| |  14| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
-| |  15| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
+| |  15| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
+| |  16| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
 | FPGA ||||
-| |  16| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
+| |  17| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
 | Signal Processing||||
-| |  17| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
-| |  18| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
+| |  18| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
+| |  19| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
 
 ---
 ## MSc Courses (SJSU)
