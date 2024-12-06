@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 -->
 ---
 ## Study Material
-Here, I will try to organize a study roadmap for people interested in Analog & Mixed-Signal design, based on my experience & what I studied before:
+Here, I will try to organize a study roadmap for people interested in Analog & Mixed-Signal design, based on what I found useful during my studies:
 1. [Analog Design Basics](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/1_Analog_Design_Basics.md)
 2. [Digital Circuits Basics](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/2_Digital_Circuits_Basics.md)
 3. [PLLs (Phase-Locked Loops)](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/3_PLLs.md)
@@ -35,7 +35,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 - [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link) 
 
 ---
-## Projects
+## Projects & Labs
 |Topic| | Project | Year |
 |---:|---|---|---|
 | ADCs & DACs ||||
@@ -55,16 +55,18 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 | |  11| [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    |  2018 |
 | |  12| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    |  2016 |
 | SERDES ||||
-| |  13| [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2022 |
-| |  14| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
+| |  13| [TX FIR Equalizer Design (CML)](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer) |  2022 |
+| |  14| [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2022 |
+| |  15| [Wireline Channel Characterization](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization) |  2022 |
+| |  16| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
 | Layout ||||
-| |  15| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
-| |  16| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
+| |  17| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
+| |  18| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
 | FPGA ||||
-| |  17| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
+| |  19| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
 | Signal Processing||||
-| |  18| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
-| |  19| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
+| |  20| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
+| |  21| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
 
 ---
 ## MSc Courses (SJSU)
