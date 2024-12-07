@@ -31,8 +31,8 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 - [Razavi AnalogMind Articles](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d) - [drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)
 </br>..................................................................................
 
-- [Interview Questions](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link)
-- [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link) 
+* [Interview Questions](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link)
+* [Resume-Building Docs](https://drive.google.com/drive/folders/1arDBKDMKbTtwGTp3IheAd3J2uaDd0Xx-?usp=share_link) 
 
 ---
 ## Projects & Labs
