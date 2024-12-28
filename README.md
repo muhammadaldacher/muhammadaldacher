@@ -38,35 +38,36 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 ## Projects & Labs
 |Topic| | Project | Year |
 |---:|---|---|---|
-| ADCs & DACs ||||
-| |  1 | [8-bit Asynchronous SAR ADC design](https://github.com/muhammadaldacher/Analog-Design-of-Asynchronous-SAR-ADC)                        |  2020 |
-| |  2 | [1.5-bit Pipeline ADC with Boosted OpAmp](https://github.com/muhammadaldacher/Analog-Design-of-1.5-bit-Pipeline-ADC-And-Boosted-OpAmp)|  2018 |
-| |  3 | [Dynamic Comparator design](https://github.com/muhammadaldacher/Analog-Design-of-Dynamic-Comparator)                                  |  2018 |
-| |  4 | [Bootstrapped Switch design](https://github.com/muhammadaldacher/Analog-Design-of-Bootstrapped-Switch)                                |  2018 |
-| |  5 | [Current-steering DAC design](https://github.com/muhammadaldacher/Analog-design-of-4-bit-current-steering-DACs)                       |  2018 |
-| |  6 | [Modeling of 4-bit Flash ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-4-bit-Flash-ADC-and-4-bit-DAC)                    |  2018 |
-| |  7 | [Modeling of 10-bit Pipeline ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-10-bit-Pipeline-ADC-and-10-bit-DAC)           |  2018 |
-| Clocking ||||
-| |  8 | [10-GHz Standing-Wave based Clock-Distribution Network design](https://github.com/muhammadaldacher/Analog-Design-of-Clock-Distribution-Network-using-Standing-Waves)|  2022 |
-| |  9 | [1.9-GHz PLL design](https://github.com/muhammadaldacher/Analog-Design-of-1.9-GHz-PLL-system)                                         |  2018 |
-| LDOs ||||
-| |  10 | [LDO Regulator design](https://github.com/muhammadaldacher/Analog-Design-of-LDO-with-PMOS-pass-device)                                |  2018 |
-| RF ||||
-| |  11| [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    |  2018 |
-| |  12| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    |  2016 |
 | SERDES ||||
-| |  13| [TX FIR Equalizer Design (CML)](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer) |  2022 |
-| |  14| [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2022 |
-| |  15| [Wireline Channel Characterization](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization) |  2022 |
-| |  16| [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
+| |  1 | [RX Active CTLE Design](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Continuous-time-linear-equalizer) |  2021 |
+| |  2 | [TX FIR Equalizer Design (CML)](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer) |  2021 |
+| |  3 | [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2021 |
+| |  4 | [Wireline Channel Characterization](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization) |  2021 |
+| |  5 | [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
+| ADCs & DACs ||||
+| |  6 | [8-bit Asynchronous SAR ADC design](https://github.com/muhammadaldacher/Analog-Design-of-Asynchronous-SAR-ADC)                        |  2020 |
+| |  7 | [1.5-bit Pipeline ADC with Boosted OpAmp](https://github.com/muhammadaldacher/Analog-Design-of-1.5-bit-Pipeline-ADC-And-Boosted-OpAmp)|  2018 |
+| |  8 | [Dynamic Comparator design](https://github.com/muhammadaldacher/Analog-Design-of-Dynamic-Comparator)                                  |  2018 |
+| |  9 | [Bootstrapped Switch design](https://github.com/muhammadaldacher/Analog-Design-of-Bootstrapped-Switch)                                |  2018 |
+| |  10| [Current-steering DAC design](https://github.com/muhammadaldacher/Analog-design-of-4-bit-current-steering-DACs)                       |  2018 |
+| |  11| [Modeling of 4-bit Flash ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-4-bit-Flash-ADC-and-4-bit-DAC)                    |  2018 |
+| |  12| [Modeling of 10-bit Pipeline ADC & DAC](https://github.com/muhammadaldacher/Modeling-of-10-bit-Pipeline-ADC-and-10-bit-DAC)           |  2018 |
+| Clocking ||||
+| |  13| [10-GHz Standing-Wave based Clock-Distribution Network design](https://github.com/muhammadaldacher/Analog-Design-of-Clock-Distribution-Network-using-Standing-Waves)|  2021 |
+| |  14| [1.9-GHz PLL design](https://github.com/muhammadaldacher/Analog-Design-of-1.9-GHz-PLL-system)                                         |  2018 |
+| LDOs ||||
+| |  15| [LDO Regulator design](https://github.com/muhammadaldacher/Analog-Design-of-LDO-with-PMOS-pass-device)                                |  2018 |
+| RF ||||
+| |  16| [1.9-GHz-Rx-frontend blocks](https://github.com/muhammadaldacher/RF-design-of-1.9-GHz-Rx-frontend)                                    |  2018 |
+| |  17| [2.4-GHz LNA design](https://github.com/muhammadaldacher/RF-design-of-2.4-GHz-LNA)                                                    |  2016 |
 | Layout ||||
-| |  17| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
-| |  18| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
+| |  18| [8x8 SRAM array design](https://github.com/muhammadaldacher/Layout-Design-of-an-8x8-SRAM-array)                                       |  2017 |
+| |  19| [8-bit Microprocessor](https://github.com/muhammadaldacher/Layout-Design-for-an-8-bit-Microprocessor)                                 |  2013 |
 | FPGA ||||
-| |  19| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
+| |  20| [FPGA Design of a Digital/Analog Clock Display](https://github.com/muhammadaldacher/FPGA-Design-of-a-Digital-Analog-Clock-Display-using-Digilent-Basys3-Artix-7) |  2017 |
 | Signal Processing||||
-| |  20| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
-| |  21| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
+| |  21| [DTFT & Convolution](https://github.com/muhammadaldacher/Signal-Processing-DTFT-and-Convolution)                                      |  2020 |
+| |  22| [Z Transform & Tone Reduction](https://github.com/muhammadaldacher/Signal-Processing-Z-Transform-and-Tone-Reduction)                  |  2020 |
 
 ---
 ## MSc Courses (SJSU)
