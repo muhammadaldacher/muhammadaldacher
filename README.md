@@ -1,7 +1,7 @@
 # Salam, I'm Muhammad Aldacher 👋
 📫 How to reach me: [Linkedin](https://www.linkedin.com/in/muhammad-isa-aldacher-95336831/)</br>
 >> -> [ [Study Material](https://github.com/muhammadaldacher#study-material) ]</br>
->> -> [ [Projects](https://github.com/muhammadaldacher#projects) ]</br>
+>> -> [ [Projects](https://github.com/muhammadaldacher#projects--labs) ]</br>
 >> -> [ [MSc Courses (SJSU)](https://github.com/muhammadaldacher#msc-courses-sjsu) ]</br>
 <!--
 **muhammadaldacher/muhammadaldacher** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
