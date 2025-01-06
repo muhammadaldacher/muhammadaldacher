@@ -1,3 +1,5 @@
+قال رسول الله صلى الله عليه وسلم ‏:‏ ‏ "‏إذا مات ابن آدم انقطع عمله إلا من ثلاث‏:‏ صدقة جارية ،أو علم ينتفع به، أو ولد صالح يدعو له‏"‏ ‏(‏‏(‏رواه مسلم‏)‏‏) </br>
+>>The Prophet Muhammad (Peace be upon him) said, "When a person dies, his deeds come to an end except for three things: An ongoing charity whose benefit is continuous; or knowledge from which benefit continues to be reaped, or a righteous child who supplicates for him." </br> </br>
 # Salam, I'm Muhammad Aldacher 👋
 📫 How to reach me: [Linkedin](https://www.linkedin.com/in/muhammad-isa-aldacher-95336831/)</br>
 >> -> [ [Study Material](https://github.com/muhammadaldacher#study-material) ]</br>
