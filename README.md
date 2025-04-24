@@ -41,11 +41,12 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 |Topic| | Project | Year |
 |---:|---|---|---|
 | SERDES ||||
-| |  1 | [RX Active CTLE Design](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Continuous-time-linear-equalizer) |  2021 |
-| |  2 | [TX FIR Equalizer Design (CML)](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer) |  2021 |
-| |  3 | [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2021 |
-| |  4 | [Wireline Channel Characterization](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization) |  2021 |
-| |  5 | [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
+| |  1 | [RX DFE (1-tap) Design](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Decision-Feedback-Equalizer) |  2021 |
+| |  2 | [RX Active CTLE Design](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Continuous-time-linear-equalizer) |  2021 |
+| |  3 | [TX FIR Equalizer Design (CML)](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer) |  2021 |
+| |  4 | [TX Driver Design: CM Vs VM](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver) |  2021 |
+| |  5 | [Wireline Channel Characterization](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization) |  2021 |
+| |  6 | [Transceiver for 10GbaseKR standard](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS) |  2013 |
 | ADCs & DACs ||||
 | |  6 | [8-bit Asynchronous SAR ADC design](https://github.com/muhammadaldacher/Analog-Design-of-Asynchronous-SAR-ADC)                        |  2020 |
 | |  7 | [1.5-bit Pipeline ADC with Boosted OpAmp](https://github.com/muhammadaldacher/Analog-Design-of-1.5-bit-Pipeline-ADC-And-Boosted-OpAmp)|  2018 |
