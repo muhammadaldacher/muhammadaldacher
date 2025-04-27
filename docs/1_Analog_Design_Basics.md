@@ -1,8 +1,9 @@
+# 1) Analog-Design Basics:
 > First, To understand what Analog IC Design is about, Check:</br>
 > "[Introduction to Analog IC design](https://drive.google.com/file/d/1d1gdfgMIvZOywWhfwNaWBI2fNJjF2fAG/view?usp=drive_link)" by Prof. Hesham Omran.</br>
 > "[Introduction to Analog IC design](https://cppsim.com/CircuitLectures/Lecture1.pdf)" by Prof. Michael Perrott.</br>
 > "[THE PRACTICE OF ANALOG IC DESIGN](https://drive.google.com/file/d/0B-sYTk-Q69hJSU4wU2g5a1A2d28/view?usp=sharing&resourcekey=0-xnjs6p32SM27tfqlGXIGCg)" by Prof. Phillip Allen.</br>
-# Studying Analog-Design Basics
+# Study Plan
 &ensp; 1- Complete one of the online courses (Choose one that you are comfortable studying from).</br>
 &ensp; 2- Derive the main equations by hand at least once.</br>
 &ensp; 3- Revise the important equations & concepts from the course slides (Or Create your own summary of important concepts).</br>
