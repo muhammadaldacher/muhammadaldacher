@@ -1,4 +1,4 @@
-
+# 4) Analog-to-Digital Converters (ADCs):
 # Suggested Study Plan
 &ensp; *1- "Data Converter Basics":* </br>
 &ensp; &ensp; &ensp; Understand the Data Convertion basics, including Sampling, Quantization, Spectrum Analysis, & Performance Metrics. </br>
