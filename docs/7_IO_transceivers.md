@@ -33,9 +33,15 @@
 |(1) "PAM4 Signaling for 56G Serial Link Applications - A Tutorial"     |Xilinx  |([Doc](https://www.xilinx.com/publications/events/designcon/2016/slides-pam4signalingfor56gserial-zhang-designcon.pdf))|
 |(2) "AN 835: PAM4 Signaling Fundamentals"                              |Intel   |([Doc](https://cdrdv2-public.intel.com/667071/an835-683852-667071.pdf))|
 
-# Project
+# Projects
 |||||
 |---:|---|---|---|
+| 1| "Wireline Channel Characterization" |([Repo](https://github.com/muhammadaldacher/Wireline-Channel-Modeling-Characterization))| |
+| 2| "TX Driver Design: CM Vs VM"        |([Repo](https://github.com/muhammadaldacher/SERDES-Design-of-TX-Driver))| |
+| 3| "TX FIR Equalizer Design (CML)"     |([Repo](https://github.com/muhammadaldacher/SERDES-Design-of-TX-FIR-Equalizer))| |
+| 4| "RX Active CTLE Design"             |([Repo](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Continuous-time-linear-equalizer))| |
+| 5| "RX DFE (1-tap) Design"             |([Repo](https://github.com/muhammadaldacher/SERDES-Design-of-RX-Decision-Feedback-Equalizer))| |
+|||||
 | | ITI SERDES Course Assignments/Labs |([Material](https://drive.google.com/drive/folders/1R1wGUw3wpd6EAEa2nzSE-6C92Uq5Mu18?usp=drive_link))| |
 | | "High-Speed Serial Interface Circuits & Systems" Course Assignments - Yonsei Univ |([Material](https://drive.google.com/drive/folders/1jxkTF-jJh1PhQ3s9-GbJaT-TQqjr-CLj?usp=drive_link))| |
 | | Analog IC design of high speed serial link transceiver for 10 GbaseKR standard using a 65 nm CMOS process |([Repo](https://github.com/muhammadaldacher/Analog-design-of-10-GbaseKR-high-speed-serial-link-transceiver-in-65-nm-CMOS))| |
