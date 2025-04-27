@@ -30,7 +30,7 @@ Here, I will try to organize a study roadmap for people interested in Analog & M
 - [Layout](https://github.com/muhammadaldacher/muhammadaldacher/blob/main/docs/-Layout.md)
 - [Cadence Tutorials](https://drive.google.com/drive/folders/0B-sYTk-Q69hJcFhUSFh0RldQN0k?resourcekey=0-TKRhphJsln3ULQS6VEVH6w&usp=share_link)
 - [Razavi References](https://drive.google.com/drive/folders/1nh3xIubKoVVnNqBn1ol3yg5K-O-5yp5A?usp=share_link)
-- [Razavi AnalogMind Articles](https://www.linkedin.com/posts/muhammad-isa-aldacher-95336831_analog-mixedsignal-vlsi-activity-6979211687199473664-R20d) - [drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)
+- [Razavi AnalogMind Articles](https://github.com/muhammadaldacher/muhammadaldacher/tree/main/Tutorials_AnalogMind) - [drive](https://drive.google.com/drive/folders/1s2yY1Wdd_azZkNUN0VTgJlu-6ddwTAYN?usp=share_link)
 </br>..................................................................................
 
 * [Interview Questions](https://drive.google.com/drive/folders/1qixg_mzW-9yX1lnDeskJIemhsvM4xd71?usp=share_link)
