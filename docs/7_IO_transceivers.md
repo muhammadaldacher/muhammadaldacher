@@ -16,6 +16,9 @@
 | 3| ECE623: Signaling & Synchronization - Microprocessors and Interfacing Circuits| Dr. Sameh Assem | Ain Shams Univ|([Video_Lecs](https://www.youtube.com/playlist?list=PLAlobGNba63_3NjxocT7eUZyn3Fc76wTU)) ([Material](https://drive.google.com/drive/folders/0B-sYTk-Q69hJSjlEbGZLUi1BbVE?resourcekey=0-VEmwfpoNLiRWvxmaNM1hYA&usp=share_link))|
 | 4| ELC611: Selected Topics in Wire line Transceiver Circuits| Dr. Mohamed Youssef | Cairo Univ|([Video_Lecs](https://youtube.com/playlist?list=PLDK7p57_ru9vksYuBNdv0FyXR9IdLG1vX))[Arabic] ([Material](https://drive.google.com/drive/folders/1FP3z1Nsr-G7NFZ5isiqScGjm_mysxV_7?usp=drive_link))|
 | 5| "High Speed Communications" Tech Talks| Dr. Tony Carusone | Alphawave Semi|([Video_Lecs](https://youtube.com/playlist?list=PLXWdf7T6k6P3sFMt3tlx15x1Y_WfTS0nv))|
+|    |   |   |   |   |
+|    |   |   |   |   |
+|    | **"What does an eye diagram show?"**  | Eng. Tim Wang Lee | Keysight |([Video_Lec](https://www.youtube.com/watch?v=sKOUOU-hVEs))|
 
 # Technical Documents
 |||||
