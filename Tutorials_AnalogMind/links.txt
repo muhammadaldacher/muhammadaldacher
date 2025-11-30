@@ -28,6 +28,8 @@ The Delay-Locked Loop:
 http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_3_2018.pdf
 The Biquadratic Filter:
 http://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_SPR_18.pdf
+The Design of a Biquadratic Filter:
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_1_2024.pdf
 The Current-Steering DAC:
 http://www.seas.ucla.edu/brweb/papers/Journals/BRWinter18DAC.pdf
 The Decision-Feedback Equalizer:
@@ -59,6 +61,16 @@ http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine2.pdf
 Cross-Coupled Pair—Part III:
 http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine3.pdf
 
+Fifty Applications of the CMOS Inverter (Parts 1- 5):
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_3_2024.pdf
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2024.pdf
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_1_2025.pdf
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_2_2025.pdf
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_3_2025.pdf
+
+Analog Design Experiments With A - Part 1:
+https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2025.pdf
+
 
 
 
@@ -66,4 +78,4 @@ http://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine3.pdf
 
 Razavi's Publications:
 https://academictree.org/etree/publications.php?pid=180951
-
+https://www.seas.ucla.edu/brweb/journal.html
