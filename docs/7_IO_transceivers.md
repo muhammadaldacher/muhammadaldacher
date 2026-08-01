@@ -32,7 +32,7 @@
 ||||
 |:---|---|---|
 |(1) "PAM4 Signaling for 56G Serial Link Applications - A Tutorial"     |Xilinx  |([Doc](https://www.xilinx.com/publications/events/designcon/2016/slides-pam4signalingfor56gserial-zhang-designcon.pdf))|
-|(2) "AN 835: PAM4 Signaling Fundamentals"                              |Intel   |([Doc](https://cdrdv2-public.intel.com/667071/an835-683852-667071.pdf))|
+|(2) "AN 835: PAM4 Signaling Fundamentals"                              |Altera   |([Doc](https://docs.altera.com/r/docs/683852/current/an-835-pam4-signaling-fundamentals/introduction))|
 
 # Projects
 |||||
